@@ -69,8 +69,8 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Header with Background Video (contact.mp4) in Loop */}
-      <section className="relative min-h-[50vh] sm:min-h-[55vh] lg:min-h-[62vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800 mb-8 sm:mb-12">
-        {/* Full-Banner Background Video in Loop without controls */}
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800 mb-10 sm:mb-14">
+        {/* Full-Banner Background Video in Loop */}
         <video
           src={contactVideo}
           autoPlay
@@ -79,23 +79,23 @@ export default function ContactPage() {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-105 sm:scale-100 transition-transform duration-700"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-100 transition-transform duration-700"
         />
 
-        {/* Clean Tint Overlay - Balanced so animation is clearly visible on mobile */}
-        <div className="absolute inset-0 bg-navy-950/65 sm:bg-navy-950/80 z-10 backdrop-blur-[0.5px]"></div>
+        {/* Clear Tint Overlay so video is crystal clear */}
+        <div className="absolute inset-0 bg-navy-950/45 sm:bg-navy-950/55 z-10"></div>
 
-        {/* Centered Neat & Clean Content */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 text-center space-y-5 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 text-pharma-300 text-xs font-bold font-heading shadow-md">
+        {/* Centered Content */}
+        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center space-y-5 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-600/80 text-pharma-300 text-xs font-bold font-heading shadow-md">
             <MessageSquare className="w-4 h-4 text-pharma-400" />
             <span>CONNECT WITH OUR COMMERCIAL DIVISION</span>
           </div>
-          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-[1.18] drop-shadow-sm">
+          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white leading-[1.15] drop-shadow-md">
             Get In Touch For Formulations <br className="hidden sm:inline" />
-            <span className="text-pharma-400">& PCD Franchise Rights</span>
+            <span className="text-pharma-300 drop-shadow-sm">& PCD Franchise Rights</span>
           </h1>
-          <p className="text-slate-200 text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed font-body max-w-2xl mx-auto drop-shadow-xs">
+          <p className="text-slate-100 text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed font-body max-w-2xl mx-auto drop-shadow-xs font-medium">
             Partner with India's fastest growing WHO-GMP certified pharmaceutical company. Reach our corporate team or submit your business requirement below.
           </p>
         </div>

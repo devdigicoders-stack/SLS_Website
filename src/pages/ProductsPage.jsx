@@ -96,7 +96,7 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
     <div className="min-h-screen bg-slate-50 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Title Header with Background Video (product-page.mp4) in Loop */}
-        <div className="relative rounded-3xl p-6 sm:p-12 text-white shadow-soft-lg mb-8 overflow-hidden border border-slate-800 bg-navy-950 min-h-[220px] sm:min-h-[260px] flex items-center">
+        <div className="relative rounded-3xl p-8 sm:p-16 lg:p-20 text-white shadow-soft-lg mb-10 overflow-hidden border border-slate-800 bg-navy-950 min-h-[320px] sm:min-h-[380px] lg:min-h-[440px] flex items-center">
           {/* Background Video */}
           <video
             src={productVideo}
@@ -106,31 +106,31 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
             playsInline
             webkit-playsinline="true"
             preload="auto"
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-105 sm:scale-100 transition-transform duration-700"
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-100 transition-transform duration-700"
           />
 
-          {/* Clean Tint Overlay - Balanced so animation is clearly visible on mobile */}
-          <div className="absolute inset-0 bg-navy-950/65 sm:bg-navy-950/80 z-10 backdrop-blur-[0.5px]"></div>
+          {/* Clear Tint Overlay so video is crystal clear */}
+          <div className="absolute inset-0 bg-navy-950/45 sm:bg-navy-950/55 z-10"></div>
 
           {/* Content */}
-          <div className="relative z-20 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900/90 border border-slate-700 text-pharma-300 text-xs font-bold mb-3 font-heading shadow-sm">
+          <div className="relative z-20 max-w-3xl space-y-3">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-600/80 text-pharma-300 text-xs font-bold font-heading shadow-md">
               <Pill className="w-3.5 h-3.5 text-pharma-400" />
               <span>OFFICIAL PRODUCT FORMULARY</span>
             </div>
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-black tracking-tight text-white leading-tight drop-shadow-sm">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white leading-tight drop-shadow-md">
               Pharmaceutical Formulations <br className="hidden sm:inline" />
-              <span className="text-pharma-400">& Product Showcase</span>
+              <span className="text-pharma-300 drop-shadow-sm">& Product Showcase</span>
             </h1>
-            <p className="text-xs sm:text-sm text-slate-200 mt-2 sm:mt-3 leading-relaxed font-body max-w-2xl drop-shadow-xs">
+            <p className="text-sm sm:text-base text-slate-100 mt-2 sm:mt-3 leading-relaxed font-body max-w-2xl drop-shadow-xs font-medium">
               Explore our comprehensive catalogue of DCGI approved, WHO-GMP manufactured drugs. Filter by chemical salt, therapeutic category, or dosage format.
             </p>
           </div>
         </div>
 
-        {/* Filter & Search Bar */}
-        <div className="bg-white rounded-2xl shadow-soft-sm border border-slate-200 p-4 sm:p-6 mb-8 space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+        {/* Filter & Search Bar (Compact & Sleek) */}
+        <div className="bg-white rounded-2xl shadow-soft-sm border border-slate-200/90 p-4 sm:p-5 mb-8 space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-3">
             {/* Search Input */}
             <div className="md:col-span-5 relative">
               <Search className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
@@ -139,12 +139,12 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
                 placeholder="Search by brand name, salt, composition..."
                 value={searchQuery}
                 onChange={(e) => handleSearchChange(e.target.value)}
-                className="w-full pl-10 pr-9 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-pharma-500 focus:border-pharma-500 outline-none font-body"
+                className="w-full pl-10 pr-9 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-pharma-500 focus:border-pharma-500 outline-none font-body transition"
               />
               {searchQuery && (
                 <button 
                   onClick={() => handleSearchChange('')}
-                  className="absolute right-3 top-3 text-slate-400 hover:text-slate-600"
+                  className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -158,7 +158,7 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
                 <select
                   value={selectedDosage}
                   onChange={(e) => setSelectedDosage(e.target.value)}
-                  className="w-full pl-10 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-pharma-500 focus:border-pharma-500 outline-none appearance-none cursor-pointer font-body"
+                  className="w-full pl-10 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-pharma-500 focus:border-pharma-500 outline-none appearance-none cursor-pointer font-body transition"
                 >
                   {DOSAGE_FORMS.map((form) => (
                     <option key={form} value={form}>{form}</option>
@@ -174,7 +174,7 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full pl-10 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-pharma-500 focus:border-pharma-500 outline-none appearance-none cursor-pointer font-body"
+                  className="w-full pl-10 pr-8 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm focus:ring-2 focus:ring-pharma-500 focus:border-pharma-500 outline-none appearance-none cursor-pointer font-body transition"
                 >
                   <option value="featured">Sort: Featured First</option>
                   <option value="brand-asc">Sort: Name (A to Z)</option>
@@ -185,18 +185,18 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
             </div>
           </div>
 
-          {/* Category Chips Bar */}
-          <div className="flex items-center gap-2 overflow-x-auto pt-2 pb-1 no-scrollbar border-t border-slate-100">
-            <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1 font-heading">
-              <Filter className="w-3 h-3" />
+          {/* Category Chips Bar (Compact Pills) */}
+          <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center gap-1.5">
+            <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider shrink-0 mr-1.5 flex items-center gap-1 font-heading">
+              <Filter className="w-3 h-3 text-pharma-600" />
               Category:
             </span>
             <button
               onClick={() => handleCategoryChange('all')}
-              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all font-heading ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all duration-200 font-heading shrink-0 ${
                 selectedCategory === 'all'
                   ? 'bg-pharma-600 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200/80 hover:text-slate-900'
               }`}
             >
               All Segments ({PHARMA_PRODUCTS.length})
@@ -207,10 +207,10 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
                 <button
                   key={cat.id}
                   onClick={() => handleCategoryChange(cat.slug)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 font-heading ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all duration-200 font-heading shrink-0 ${
                     isSelected
                       ? 'bg-pharma-600 text-white shadow-xs'
-                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                      : 'bg-slate-100 text-slate-700 hover:bg-slate-200/80 hover:text-slate-900'
                   }`}
                 >
                   <span>{cat.name}</span>

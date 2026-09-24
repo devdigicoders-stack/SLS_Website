@@ -7,15 +7,14 @@ import {
   Menu, 
   X, 
   ShieldCheck, 
-  FileText, 
-  ChevronDown, 
-  Sparkles, 
   Pill, 
   ArrowRight,
   Download,
-  Building2
+  Sparkles,
+  MapPin,
+  Clock
 } from 'lucide-react';
-import { COMPANY_INFO, CATEGORIES } from '../../data/pharmaData';
+import { COMPANY_INFO } from '../../data/pharmaData';
 import toast from 'react-hot-toast';
 
 export default function Navbar({ onOpenEnquiry }) {
@@ -28,7 +27,7 @@ export default function Navbar({ onOpenEnquiry }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -37,6 +36,7 @@ export default function Navbar({ onOpenEnquiry }) {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
+    setSearchOpen(false);
   }, [location.pathname]);
 
   const handleSearch = (e) => {
@@ -49,137 +49,116 @@ export default function Navbar({ onOpenEnquiry }) {
   };
 
   const handleDownloadBrochure = () => {
-    toast.success("Downloading SLS Pharma Complete Product Glossary & Price List...", {
+    toast.success("Downloading SLS Pharma Product Catalogue & Price List...", {
       icon: '📄',
-      duration: 4000
+      duration: 3500
     });
   };
 
   const navLinks = [
-    { name: "Home", path: "/" },
+    { name: "Home Page", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Pharma Products", path: "/products", badge: "350+" },
-    { name: "Manufacturing Facility", path: "/facility" },
+    { name: "Pharma Products", path: "/products" },
     { name: "Contact Us", path: "/contact" },
   ];
 
   return (
     <>
-      {/* Top Notification & Quick Contact Bar */}
-        
+      {/* Top Notification / Quick Info Bar */}
+      <div className="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden md:block font-body">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-6">
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <ShieldCheck className="w-3.5 h-3.5 text-pharma-400" />
+              <span className="font-semibold text-slate-200">WHO-GMP & ISO 9001:2015</span> Certified Plant
+            </span>
+            <span className="flex items-center gap-1.5 text-slate-400">
+              <MapPin className="w-3.5 h-3.5 text-pharma-400" />
+              <span>Biotech Park, Lucknow (UP)</span>
+            </span>
+          </div>
 
-      {/* Main Clean Navbar */}
+          <div className="flex items-center gap-6">
+            <a 
+              href={`tel:${COMPANY_INFO.phone}`} 
+              className="flex items-center gap-1.5 hover:text-pharma-300 transition text-slate-200 font-semibold"
+            >
+              <Phone className="w-3.5 h-3.5 text-pharma-400" />
+              <span>{COMPANY_INFO.phone}</span>
+            </a>
+            <a 
+              href={`mailto:${COMPANY_INFO.email}`} 
+              className="flex items-center gap-1.5 hover:text-pharma-300 transition text-slate-400"
+            >
+              <Mail className="w-3.5 h-3.5 text-pharma-400" />
+              <span>{COMPANY_INFO.email}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Corporate Header (Clean, Spacious & Legible) */}
       <header 
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`sticky top-0 z-40 bg-white transition-all duration-300 ${
           isScrolled 
-            ? "bg-white shadow-md py-3 border-b border-slate-200" 
-            : "bg-white py-4 border-b border-slate-100"
+            ? "shadow-md py-4 border-b border-slate-200" 
+            : "py-4 sm:py-5 border-b border-slate-100"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
+            
             {/* Brand Logo */}
-            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group">
-              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-pharma-600 p-2 shadow-sm text-white flex items-center justify-center shrink-0">
-                <Pill className="w-5 h-5 sm:w-6 sm:h-6 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+            <Link to="/" className="flex items-center gap-3.5 group shrink-0">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-pharma-600 p-2.5 text-white flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-sm">
+                <Pill className="w-6 h-6 sm:w-7 sm:h-7 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
               </div>
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="font-heading font-extrabold text-xl sm:text-2xl text-slate-900 tracking-tight">
+              <div className="flex flex-col">
+                <div className="flex items-center gap-2">
+                  <span className="font-heading font-black text-2xl sm:text-3xl text-slate-900 tracking-tight leading-none">
                     SLS <span className="text-pharma-600">Pharma</span>
                   </span>
-                  <span className="hidden sm:inline-block text-[10px] font-bold px-1.5 py-0.5 bg-pharma-50 text-pharma-700 rounded border border-pharma-200 uppercase tracking-wider">
+                  <span className="hidden sm:inline-block text-[11px] font-extrabold px-2 py-0.5 bg-pharma-50 text-pharma-700 rounded-md border border-pharma-200 tracking-wider uppercase">
                     LIFESCIENCES
                   </span>
                 </div>
-                <p className="text-[9px] sm:text-[10px] font-semibold text-slate-500 tracking-wider uppercase">
+                <p className="text-[11px] font-bold text-slate-500 tracking-wider uppercase mt-1 font-heading">
                   WHO-GMP Formulations
                 </p>
               </div>
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-2">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.path;
                 return (
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 flex items-center gap-1.5 relative font-heading ${
+                    className={`px-5 py-2.5 rounded-xl text-[15px] sm:text-[16px] font-bold transition-all duration-200 font-heading relative ${
                       isActive 
-                        ? "text-pharma-700 bg-pharma-50 shadow-2xs font-extrabold" 
+                        ? "text-pharma-700 bg-pharma-50 border border-pharma-200 shadow-2xs font-extrabold" 
                         : "text-slate-700 hover:text-pharma-600 hover:bg-slate-50"
                     }`}
                   >
                     <span>{link.name}</span>
-                    {link.badge && (
-                      <span className="text-[10px] font-extrabold px-1.5 py-0.2 bg-pharma-600 text-white rounded-full">
-                        {link.badge}
-                      </span>
-                    )}
                   </Link>
                 );
               })}
             </nav>
 
-            {/* Right Action Icons & Button (Desktop / Tablet) */}
-            <div className="hidden sm:flex items-center gap-3">
-              {/* Search Toggle */}
-              <button 
-                onClick={() => setSearchOpen(!searchOpen)}
-                className="p-2.5 text-slate-600 hover:text-pharma-600 hover:bg-slate-100 rounded-xl transition"
-                title="Search Medicines"
-              >
-                <Search className="w-4 h-4" />
-              </button>
-
-              {/* Quotation CTA */}
-              <button
-                onClick={() => onOpenEnquiry(null, "Business Enquiry")}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-pharma-600 hover:bg-pharma-700 shadow-sm transition font-heading"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-white" />
-                <span>Request Quotation</span>
-              </button>
-            </div>
-
-            {/* Mobile Menu trigger only (Search icon removed on mobile) */}
-            <div className="flex items-center sm:hidden">
+            {/* Mobile Menu trigger */}
+            <div className="flex items-center lg:hidden">
               <button 
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-slate-700 hover:text-pharma-600 hover:bg-slate-100 rounded-xl transition"
+                className="p-2.5 text-slate-800 hover:text-pharma-600 hover:bg-slate-100 rounded-xl transition border border-slate-200"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-6 h-6 text-slate-900" /> : <Menu className="w-6 h-6 text-slate-900" />}
               </button>
             </div>
           </div>
-
-          {/* Quick Search Popdown Bar */}
-          {searchOpen && (
-            <div className="mt-3 pt-3 border-t border-slate-100 animate-in slide-in-from-top-2 duration-200">
-              <form onSubmit={handleSearch} className="flex gap-2">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
-                  <input 
-                    type="text"
-                    autoFocus
-                    placeholder="Search medicines by brand name, generic salt, or composition (e.g., Amoxicillin, Pantoprazole)..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-pharma-500 focus:border-pharma-500 outline-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="px-5 py-2.5 bg-pharma-600 text-white rounded-xl text-sm font-bold hover:bg-pharma-700 transition"
-                >
-                  Search
-                </button>
-              </form>
-            </div>
-          )}
         </div>
 
         {/* Mobile Navigation Drawer */}
@@ -199,11 +178,6 @@ export default function Navbar({ onOpenEnquiry }) {
                     }`}
                   >
                     <span>{link.name}</span>
-                    {link.badge && (
-                      <span className="text-[10px] font-extrabold px-2 py-0.5 bg-pharma-600 text-white rounded-full">
-                        {link.badge}
-                      </span>
-                    )}
                   </Link>
                 );
               })}
@@ -226,7 +200,7 @@ export default function Navbar({ onOpenEnquiry }) {
                 className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-xs text-slate-700 bg-slate-100"
               >
                 <Download className="w-4 h-4 text-pharma-600" />
-                <span>Download Product Glossary (PDF)</span>
+                <span>Download Product Catalogue (PDF)</span>
               </button>
             </div>
           </div>

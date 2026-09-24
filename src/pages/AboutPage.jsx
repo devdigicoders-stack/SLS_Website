@@ -46,14 +46,14 @@ export default function AboutPage({ onEnquire }) {
     { year: "2017", title: "WHO-GMP Certification", desc: "Commissioned automated tablet & capsule manufacturing suites in Biotech Park." },
     { year: "2020", title: "Injectable & Critical Care Expansion", desc: "Added sterile liquid and dry lyophilized injectable manufacturing lines." },
     { year: "2023", title: "Nutraceuticals & 9G Herbal Segment", desc: "Introduced advanced softgels, antioxidants, and bone health formulations." },
-    { year: "2026", title: "Pan-India & Global Export Presence", desc: "Surpassed 350+ commercial products, 750+ partners across 28 states & export hubs." }
+    { year: "2026", title: "Pan-India & Global Export Presence", desc: "Expanding portfolio with 750+ partners across 28 states & international export hubs." }
   ];
 
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Banner with Full Background Video (about.mp4) in Loop */}
-      <section className="relative min-h-[55vh] sm:min-h-[60vh] lg:min-h-[68vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800">
-        {/* Full-Banner Background Video in Loop without controls */}
+      <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800">
+        {/* Full-Banner Background Video in Loop */}
         <video
           src={aboutVideo}
           autoPlay
@@ -62,25 +62,25 @@ export default function AboutPage({ onEnquire }) {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-105 sm:scale-100 transition-transform duration-700"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-100 transition-transform duration-700"
         />
 
-        {/* Clean Tint Overlay - Balanced so animation is clearly visible on mobile */}
-        <div className="absolute inset-0 bg-navy-950/65 sm:bg-navy-950/80 z-10 backdrop-blur-[0.5px]"></div>
+        {/* Clear Tint Overlay so video is prominently visible */}
+        <div className="absolute inset-0 bg-navy-950/45 sm:bg-navy-950/55 z-10"></div>
 
-        {/* Centered Neat & Clean Content */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 text-center space-y-5 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 text-pharma-300 text-xs font-bold font-heading shadow-md">
+        {/* Centered Content */}
+        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center space-y-5 sm:space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-600/80 text-pharma-300 text-xs font-bold font-heading shadow-md">
             <Building2 className="w-4 h-4 text-pharma-400" />
             <span>ABOUT SLS PHARMA</span>
           </div>
-          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-[1.18] drop-shadow-sm">
+          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white leading-[1.15] drop-shadow-md">
             Transforming Healthcare Through <br />
-            <span className="text-pharma-400">
+            <span className="text-pharma-300 drop-shadow-sm">
               Precision Formulations
             </span>
           </h1>
-          <p className="text-slate-200 text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed font-body max-w-2xl mx-auto drop-shadow-xs">
+          <p className="text-slate-100 text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed font-body max-w-2xl mx-auto drop-shadow-xs font-medium">
             Founded with an unwavering vision to deliver superior pharmaceutical formulations, SLS Pharma stands as a symbol of clinical trust, bio-efficacy, and ethical pharmaceutical manufacturing.
           </p>
         </div>

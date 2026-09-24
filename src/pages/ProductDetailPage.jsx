@@ -98,6 +98,9 @@ export default function ProductDetailPage({ onEnquire, onQuickView }) {
                     src={product.images ? product.images[activeImageIndex] : product.image} 
                     alt={product.brandName}
                     className="w-full h-full object-cover rounded-xl"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=90";
+                    }}
                   />
                 </div>
 
@@ -150,42 +153,64 @@ export default function ProductDetailPage({ onEnquire, onQuickView }) {
                   ))}
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl font-heading font-black text-slate-900 tracking-tight">
+                <h1 className="text-3xl sm:text-5xl font-heading font-black text-slate-900 tracking-tight leading-tight">
                   {product.brandName}
                 </h1>
-                <p className="text-sm font-semibold text-pharma-700 mt-1 font-body">
+                <p className="text-base sm:text-lg font-bold text-pharma-700 mt-2 font-body">
                   {product.genericName}
                 </p>
 
-                <p className="text-xs sm:text-sm text-slate-600 mt-4 leading-relaxed font-body">
+                {/* Price & Packaging Banner on Detail Page */}
+                <div className="mt-4 p-4 bg-emerald-50/60 border border-emerald-200/80 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+                  <div>
+                    <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider block font-heading">
+                      Maximum Retail Price (MRP)
+                    </span>
+                    <span className="text-2xl sm:text-3xl font-black text-slate-900 font-heading text-emerald-700">
+                      {product.mrp || "₹ 150.00"}
+                    </span>
+                    <span className="text-xs text-slate-500 font-medium ml-2">(Inclusive of all taxes)</span>
+                  </div>
+                  <div className="text-left sm:text-right">
+                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block font-heading">
+                      Standard Pack Form
+                    </span>
+                    <span className="text-sm font-bold text-slate-800 font-body flex items-center gap-1.5 sm:justify-end">
+                      <Package className="w-4 h-4 text-pharma-600" />
+                      {product.packPrice || product.packaging}
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-sm sm:text-base text-slate-600 mt-4 leading-relaxed font-body">
                   {product.shortDesc}
                 </p>
 
                 {/* Chemical Composition Table */}
-                <div className="mt-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-heading font-bold text-sm text-slate-900 uppercase tracking-wider flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-pharma-600" />
+                <div className="mt-8">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-heading font-bold text-base text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                      <Sparkles className="w-5 h-5 text-pharma-600" />
                       <span>Drug Composition & Active Assay</span>
                     </h3>
-                    <span className="text-[11px] font-medium text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                    <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-lg border border-emerald-200">
                       Analytical HPLC Verified
                     </span>
                   </div>
 
-                  <div className="border border-slate-200/80 rounded-2xl overflow-hidden shadow-2xs">
-                    <table className="w-full text-xs text-left font-body">
-                      <thead className="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-[10px]">
+                  <div className="border border-slate-200 rounded-2xl overflow-hidden shadow-2xs">
+                    <table className="w-full text-sm text-left font-body">
+                      <thead className="bg-slate-100 text-slate-700 font-bold uppercase tracking-wider text-xs">
                         <tr>
-                          <th className="px-4 py-2.5">Active Salt / Excipient</th>
-                          <th className="px-4 py-2.5 text-right">Strength (Amount)</th>
+                          <th className="px-5 py-3.5">Active Salt / Excipient</th>
+                          <th className="px-5 py-3.5 text-right">Strength (Amount)</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-slate-100">
+                      <tbody className="divide-y divide-slate-200/80">
                         {product.composition.map((comp, idx) => (
                           <tr key={idx} className="hover:bg-slate-50/80 transition">
-                            <td className="px-4 py-2.5 font-semibold text-slate-800">{comp.ingredient}</td>
-                            <td className="px-4 py-2.5 text-right font-bold text-pharma-700">{comp.amount}</td>
+                            <td className="px-5 py-3.5 font-semibold text-slate-800">{comp.ingredient}</td>
+                            <td className="px-5 py-3.5 text-right font-bold text-pharma-700 text-sm sm:text-base">{comp.amount}</td>
                           </tr>
                         ))}
                       </tbody>
@@ -194,62 +219,62 @@ export default function ProductDetailPage({ onEnquire, onQuickView }) {
                 </div>
 
                 {/* Primary Indications */}
-                <div className="mt-6">
-                  <h3 className="font-heading font-bold text-sm text-slate-900 uppercase tracking-wider mb-2.5 flex items-center gap-2">
-                    <Info className="w-4 h-4 text-pharma-600" />
+                <div className="mt-8">
+                  <h3 className="font-heading font-bold text-base text-slate-900 uppercase tracking-wider mb-3.5 flex items-center gap-2">
+                    <Info className="w-5 h-5 text-pharma-600" />
                     <span>Clinical Indications & Uses</span>
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {product.indications.map((ind, i) => (
-                      <div key={i} className="flex items-start gap-2 text-xs text-slate-700 bg-slate-50/80 p-2.5 rounded-xl border border-slate-100 font-body">
-                        <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                        <span>{ind}</span>
+                      <div key={i} className="flex items-start gap-2.5 text-sm text-slate-700 bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 font-body">
+                        <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                        <span className="font-medium">{ind}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 {/* Dosage & Storage Guidelines */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                  <div className="p-4 bg-sky-50/60 rounded-2xl border border-sky-100 text-xs font-body">
-                    <div className="flex items-center gap-1.5 font-bold text-sky-900 mb-1 font-heading">
-                      <Clock className="w-4 h-4 text-sky-600" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
+                  <div className="p-5 bg-sky-50/70 rounded-2xl border border-sky-100 text-sm font-body">
+                    <div className="flex items-center gap-2 font-bold text-sky-900 mb-1.5 font-heading text-base">
+                      <Clock className="w-5 h-5 text-sky-600" />
                       <span>Dosage & Administration</span>
                     </div>
-                    <p className="text-slate-600">{product.dosageAdministration}</p>
+                    <p className="text-slate-700 leading-relaxed">{product.dosageAdministration}</p>
                   </div>
 
-                  <div className="p-4 bg-amber-50/60 rounded-2xl border border-amber-100 text-xs font-body">
-                    <div className="flex items-center gap-1.5 font-bold text-amber-900 mb-1 font-heading">
-                      <Thermometer className="w-4 h-4 text-amber-600" />
+                  <div className="p-5 bg-amber-50/70 rounded-2xl border border-amber-100 text-sm font-body">
+                    <div className="flex items-center gap-2 font-bold text-amber-900 mb-1.5 font-heading text-base">
+                      <Thermometer className="w-5 h-5 text-amber-600" />
                       <span>Storage & Shelf Life</span>
                     </div>
-                    <p className="text-slate-600">{product.storage}</p>
+                    <p className="text-slate-700 leading-relaxed">{product.storage}</p>
                   </div>
                 </div>
 
                 {/* Precautions Warning */}
                 {product.warnings && (
-                  <div className="mt-4 p-3 bg-rose-50/70 border border-rose-200 rounded-xl text-xs text-rose-800 flex items-start gap-2 font-body">
-                    <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                  <div className="mt-5 p-4 bg-rose-50/80 border border-rose-200 rounded-2xl text-sm text-rose-900 flex items-start gap-2.5 font-body">
+                    <AlertTriangle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
                     <span><strong>Precaution:</strong> {product.warnings}</span>
                   </div>
                 )}
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+              <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => onEnquire(product, "Product Specific Order")}
-                  className="flex-1 flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-white bg-pharma-600 hover:bg-pharma-700 shadow-md transition font-heading"
+                  className="flex-1 flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl font-bold text-sm sm:text-base text-white bg-pharma-600 hover:bg-pharma-700 shadow-md transition font-heading"
                 >
-                  <Package className="w-4 h-4" />
+                  <Package className="w-5 h-5" />
                   <span>Request Commercial Quotation</span>
                 </button>
 
                 <button
                   onClick={() => onEnquire(product, "PCD Monopoly Franchise")}
-                  className="flex-1 flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm text-slate-800 bg-slate-100 hover:bg-slate-200 transition"
+                  className="flex-1 flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl font-bold text-sm sm:text-base text-slate-800 bg-slate-100 hover:bg-slate-200 transition font-heading"
                 >
                   <span>Inquire PCD Monopoly Rights</span>
                 </button>

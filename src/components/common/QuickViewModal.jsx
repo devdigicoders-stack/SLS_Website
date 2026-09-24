@@ -67,7 +67,18 @@ export default function QuickViewModal({ product, isOpen, onClose, onEnquire }) 
               {product.genericName}
             </p>
 
-            <p className="text-xs text-slate-600 mt-3 leading-relaxed">
+            {/* MRP Badge */}
+            <div className="mt-3 flex items-center gap-3">
+              <span className="text-xl font-black text-emerald-700 font-heading">
+                {product.mrp || "₹ 150.00"}
+              </span>
+              <span className="text-[11px] text-slate-400 font-medium">(Incl. all taxes)</span>
+              <span className="text-xs font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200">
+                {product.packPrice || product.packType}
+              </span>
+            </div>
+
+            <p className="text-xs text-slate-600 mt-2.5 leading-relaxed">
               {product.shortDesc}
             </p>
 

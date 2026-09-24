@@ -3,19 +3,30 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 17px;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-slate-50 text-slate-800 antialiased overflow-x-hidden;
+    @apply bg-slate-50 text-slate-800 antialiased overflow-x-hidden font-body text-[16px] sm:text-[17px] leading-relaxed tracking-normal;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-slate-900 font-bold;
+  }
+  p {
+    @apply leading-relaxed;
   }
 }
 
-/* Custom Glassmorphism & Panels */
+/* Custom Glassmorphism & Clean Borders */
 .glass-panel {
   background: #ffffff;
   border: 1px solid #e2e8f0;
 }
 
 .glass-card-dark {
-  background: #0f172a;
+  background: #090d16;
   border: 1px solid #1e293b;
 }
 
@@ -68,4 +79,13 @@
     transform: scale(2.4);
     opacity: 0;
   }
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
