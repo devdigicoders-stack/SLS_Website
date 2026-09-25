@@ -128,12 +128,23 @@ export const DOSAGE_FORMS = [
   "Protein Powder"
 ];
 
+// Import Product Images from assets
+import imgAmoxysheild from '../assest/images/product-10.jpeg';
+import imgPainexa from '../assest/images/product-2.jpeg';
+import imgGastroD from '../assest/images/product-5.jpeg';
+import imgEzoD from '../assest/images/product-3.jpeg';
+import imgVitaAll from '../assest/images/product-7.jpeg';
+import imgOstoviva from '../assest/images/product-8.jpeg';
+import imgMCol from '../assest/images/product-4.jpeg';
+import imgElcarva from '../assest/images/product-1.jpeg';
+import imgTavlo from '../assest/images/product-6.jpeg';
+
 export const PHARMA_PRODUCTS = [
   {
     id: "nx-001",
-    slug: "clavanex-625-tablets",
-    brandName: "CLAVANEX-625",
-    genericName: "Amoxicillin & Potassium Clavulanate Tablets IP 625mg",
+    slug: "amoxysheild-625-tablets",
+    brandName: "Amoxysheild™ 625",
+    genericName: "Amoxicillin (500 mg) + Potassium Clavulanate (125 mg) Tablets IP",
     category: "Antibiotics & Anti-Infectives",
     categorySlug: "antibiotics",
     dosageForm: "Tablets",
@@ -142,28 +153,25 @@ export const PHARMA_PRODUCTS = [
     packPrice: "10 Tablets / Strip",
     isFeatured: true,
     isNew: false,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=90",
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=90"
-    ],
+    image: imgAmoxysheild,
+    images: [imgAmoxysheild],
     packaging: "10 x 1 x 10 Alu-Alu Blister Pack with Moisture Barrier",
     packType: "Alu-Alu Strip",
-    shortDesc: "Potent broad-spectrum bactericidal antibiotic pairing Amoxicillin with Clavulanic Acid to combat beta-lactamase producing pathogens.",
+    shortDesc: "Potent broad-spectrum bactericidal antibiotic pairing Amoxicillin with Clavulanic Acid to combat beta-lactamase producing pathogens with trusted combination and better treatment outcomes.",
     composition: [
-      { ingredient: "Amoxicillin Trihydrate IP eq. to Amoxicillin (Anhydrous)", amount: "500 mg" },
+      { ingredient: "Amoxicillin Trihydrate IP eq. to Amoxicillin", amount: "500 mg" },
       { ingredient: "Potassium Clavulanate Diluted IP eq. to Clavulanic Acid", amount: "125 mg" },
       { ingredient: "Excipients", amount: "q.s." }
     ],
     therapeuticClass: "Penicillinase-resistant Beta-lactam Antibiotic",
     indications: [
+      "Effective Bacterial Coverage",
       "Lower Respiratory Tract Infections (Pneumonia, Bronchitis)",
       "Acute Bacterial Sinusitis and Otitis Media",
       "Urinary Tract Infections (UTI, Pyelonephritis)",
-      "Skin, Soft Tissue, and Post-Surgical Infections",
-      "Dental & Maxillofacial Abscesses"
+      "Skin, Soft Tissue, and Dental Abscesses"
     ],
-    dosageAdministration: "As directed by the Physician. Standard adult dose: 1 tablet every 12 hours with meals.",
+    dosageAdministration: "As directed by the Physician. Standard adult dose: 1 tablet twice daily with meals.",
     storage: "Store in a cool, dry place below 25°C. Protect from moisture and direct sunlight.",
     warnings: "Contraindicated in patients with a history of penicillin allergy.",
     certifications: ["WHO-GMP", "ISO 9001:2015", "DCGI Approved"],
@@ -171,31 +179,66 @@ export const PHARMA_PRODUCTS = [
   },
   {
     id: "nx-002",
-    slug: "pancon-dsr-capsules",
-    brandName: "PANCON-DSR",
-    genericName: "Pantoprazole Gastro-Resistant & Domperidone Prolonged-Release Capsules IP",
+    slug: "painexa-sp-tablets",
+    brandName: "Painexa-SP™",
+    genericName: "Aceclofenac (100 mg) + Paracetamol (325 mg) + Serratiopeptidase (15 mg) Tablets",
+    category: "Pain Relief & Anti-Inflammatory",
+    categorySlug: "analgesics",
+    dosageForm: "Tablets",
+    badge: "Fast Relief",
+    mrp: "₹ 110.00",
+    packPrice: "10 Tablets / Strip",
+    isFeatured: true,
+    isNew: false,
+    image: imgPainexa,
+    images: [imgPainexa],
+    packaging: "10 x 10 Blister Pack in High Finish Metallic Box",
+    packType: "Blister Pack",
+    shortDesc: "Triple-action synergistic formulation of NSAID, analgesic-antipyretic, and proteolytic enzyme for swift pain relief, inflammation reduction, and swelling control.",
+    composition: [
+      { ingredient: "Aceclofenac IP", amount: "100 mg" },
+      { ingredient: "Paracetamol IP", amount: "325 mg" },
+      { ingredient: "Serratiopeptidase IP (30,000 units)", amount: "15 mg" },
+      { ingredient: "Excipients", amount: "q.s." }
+    ],
+    therapeuticClass: "Non-Steroidal Anti-Inflammatory Drug (NSAID)",
+    indications: [
+      "Relieves Acute & Chronic Pain",
+      "Reduces Joint & Muscle Inflammation",
+      "Decreases Post-traumatic Swelling & Edema",
+      "Osteoarthritis, Rheumatoid Arthritis & Spondylitis",
+      "Dental Pain & Post-Surgical Recovery"
+    ],
+    dosageAdministration: "One tablet twice daily after meals or as prescribed by physician.",
+    storage: "Store protected from light and moisture below 30°C.",
+    warnings: "Take with food. Not recommended during late pregnancy.",
+    certifications: ["WHO-GMP", "ISO 9001:2015", "DCGI Approved"],
+    highlights: ["Serratiopeptidase Enhanced Absorption", "Rapid Onset of Action", "Gastric Gentle Matrix"]
+  },
+  {
+    id: "nx-003",
+    slug: "gastro-d-capsules",
+    brandName: "GASTRO-D",
+    genericName: "Pantoprazole 40 mg + Domperidone 30 mg Capsules",
     category: "Gastrointestinal & Antacids",
     categorySlug: "gastrointestinal",
     dosageForm: "Capsules",
     badge: "High Demand",
     mrp: "₹ 145.00",
-    packPrice: "10 Capsules / Strip",
+    packPrice: "15 Capsules / Strip (10 x 15 Capsules)",
     isFeatured: true,
     isNew: false,
-    image: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=90",
-      "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "10 x 10 Alu-Alu Strips in Outer Carton",
-    packType: "Alu-Alu Pellets",
-    shortDesc: "Dual-action enteric coated PPI combined with sustained-release prokinetic for rapid relief in GERD, acidity, and dyspepsia.",
+    image: imgGastroD,
+    images: [imgGastroD],
+    packaging: "10 Strips of 15 Capsules (10 x 15 Alu-Alu Pack)",
+    packType: "Alu-Alu Strip",
+    shortDesc: "Dual-action enteric coated PPI combined with sustained-release prokinetic for rapid relief in GERD, acidity, heartburn, and dyspepsia.",
     composition: [
       { ingredient: "Pantoprazole Sodium IP eq. to Pantoprazole", amount: "40 mg" },
       { ingredient: "Domperidone IP (as Sustained Release Pellets)", amount: "30 mg" },
       { ingredient: "Excipients", amount: "q.s." }
     ],
-    therapeuticClass: "Proton Pump Inhibitor (PPI) + Antiemetic / Prokinetic",
+    therapeuticClass: "Proton Pump Inhibitor (PPI) + Prokinetic",
     indications: [
       "Gastroesophageal Reflux Disease (GERD)",
       "Hyperacidity, Heartburn & Acid Regurgitation",
@@ -209,390 +252,223 @@ export const PHARMA_PRODUCTS = [
     highlights: ["Targeted Intestinal Release", "24-Hour Acid Control", "Triple-Coated Pellets", "Zero Nausea Formulation"]
   },
   {
-    id: "nx-003",
-    slug: "acemol-sp-tablets",
-    brandName: "ACEMOL-SP",
-    genericName: "Aceclofenac, Paracetamol & Serratiopeptidase Tablets",
-    category: "Pain Relief & Anti-Inflammatory",
-    categorySlug: "analgesics",
-    dosageForm: "Tablets",
-    badge: "Fast Relief",
-    mrp: "₹ 110.00",
-    packPrice: "10 Tablets / Strip",
-    isFeatured: true,
-    isNew: false,
-    image: "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "10 x 10 Blister Pack in High Finish Metallic Box",
-    packType: "Blister Pack",
-    shortDesc: "Triple-action synergistic formulation of NSAID, analgesic-antipyretic, and proteolytic enzyme for swift pain and edema reduction.",
-    composition: [
-      { ingredient: "Aceclofenac IP", amount: "100 mg" },
-      { ingredient: "Paracetamol IP", amount: "325 mg" },
-      { ingredient: "Serratiopeptidase IP (30,000 units)", amount: "15 mg" },
-      { ingredient: "Excipients", amount: "q.s." }
-    ],
-    therapeuticClass: "Non-Steroidal Anti-Inflammatory Drug (NSAID)",
-    indications: [
-      "Post-Operative Inflammation and Pain",
-      "Osteoarthritis, Rheumatoid Arthritis & Spondylitis",
-      "Traumatic Injury, Sprains & Sports Injuries",
-      "Dental Pain & Maxillary Inflammation"
-    ],
-    dosageAdministration: "One tablet twice daily after meals or as prescribed by physician.",
-    storage: "Store protected from light and moisture below 30°C.",
-    warnings: "Take with food. Not recommended during late pregnancy.",
-    certifications: ["WHO-GMP", "ISO 9001:2015"],
-    highlights: ["Serratiopeptidase Enhanced Absorption", "Rapid Onset of Action", "Gastric Gentle Matrix"]
-  },
-  {
     id: "nx-004",
-    slug: "cefix-o-200-tablets",
-    brandName: "CEFIX-O 200",
-    genericName: "Cefixime & Ofloxacin Tablets IP",
-    category: "Antibiotics & Anti-Infectives",
-    categorySlug: "antibiotics",
-    dosageForm: "Tablets",
-    badge: "Dual Defense",
-    mrp: "₹ 215.00",
-    packPrice: "10 Tablets / Strip",
-    isFeatured: true,
-    isNew: false,
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "10 x 10 Alu-Alu Pack with Hologram Security",
-    packType: "Alu-Alu Strip",
-    shortDesc: "3rd generation cephalosporin combined with fluoroquinolone for severe bacterial and enteric infections.",
-    composition: [
-      { ingredient: "Cefixime Trihydrate IP eq. to Anhydrous Cefixime", amount: "200 mg" },
-      { ingredient: "Ofloxacin IP", amount: "200 mg" },
-      { ingredient: "Excipients", amount: "q.s." }
-    ],
-    therapeuticClass: "3rd Gen Cephalosporin + Fluoroquinolone",
-    indications: [
-      "Typhoid (Enteric) Fever & Multidrug-Resistant Salmonellosis",
-      "Complicated Urinary Tract Infections",
-      "Community-Acquired Pneumonia",
-      "Intra-Abdominal Infections"
-    ],
-    dosageAdministration: "1 tablet twice daily for 5 to 10 days as advised by physician.",
-    storage: "Store in a cool dry place below 25°C.",
-    warnings: "Maintain adequate patient hydration to prevent crystalluria.",
-    certifications: ["WHO-GMP", "DCGI Approved"],
-    highlights: ["99.4% Enteric Eradication", "Synergistic Dual Action", "Alu-Alu Protected"]
-  },
-  {
-    id: "nx-005",
-    slug: "vitalife-9g-softgels",
-    brandName: "VITALIFE-9G",
-    genericName: "Ginseng, Green Tea, Grape Seed, Ginkgo Biloba with Multivitamins & Minerals Softgel",
-    category: "Multivitamins & Nutraceuticals",
-    categorySlug: "nutraceuticals",
-    dosageForm: "Softgel Capsules",
-    badge: "Nutraceutical",
-    mrp: "₹ 240.00",
-    packPrice: "10 Softgels / Strip",
+    slug: "ezo-d-capsules",
+    brandName: "EZO-D",
+    genericName: "Esomeprazole 40 mg + Domperidone 30 mg Capsules",
+    category: "Gastrointestinal & Antacids",
+    categorySlug: "gastrointestinal",
+    dosageForm: "Capsules",
+    badge: "Fast Acting",
+    mrp: "₹ 165.00",
+    packPrice: "15 Capsules / Strip (10 x 15 Capsules)",
     isFeatured: true,
     isNew: true,
-    image: "/vitalife-9g.jpg",
-    images: [
-      "/vitalife-9g.jpg"
-    ],
-    packaging: "10 x 1 x 10 Blister in Premium Velvet-Touch UV Box",
-    packType: "Softgel Blister",
-    shortDesc: "Comprehensive 9G herbal extract matrix fortified with 24 essential micronutrients, antioxidants, and trace minerals.",
+    image: imgEzoD,
+    images: [imgEzoD],
+    packaging: "10 Strips of 15 Capsules (10 x 15 Alu-Alu Pack)",
+    packType: "Alu-Alu Strip",
+    shortDesc: "Next-generation S-isomer proton pump inhibitor Esomeprazole with sustained-release Domperidone for severe reflux and erosive esophagitis.",
     composition: [
-      { ingredient: "Ginseng Extract (3% Ginsenosides)", amount: "42.5 mg" },
-      { ingredient: "Green Tea Extract (50% Polyphenols)", amount: "10 mg" },
-      { ingredient: "Grape Seed Extract (95% Proanthocyanidins)", amount: "15 mg" },
-      { ingredient: "Omega-3 Fatty Acids (EPA 90mg + DHA 60mg)", amount: "150 mg" },
-      { ingredient: "Vitamins A, B-Complex, C, D3, E & Zinc", amount: "RDA Balanced" }
+      { ingredient: "Esomeprazole Magnesium Trihydrate eq. to Esomeprazole", amount: "40 mg" },
+      { ingredient: "Domperidone IP (as Sustained Release Pellets)", amount: "30 mg" },
+      { ingredient: "Excipients", amount: "q.s." }
     ],
-    therapeuticClass: "Nutraceutical / Vitality Restorative",
+    therapeuticClass: "Advanced PPI + Prokinetic Agent",
     indications: [
-      "General Debility & Chronic Fatigue",
-      "Cardiovascular & Neuroprotective Support",
-      "Immune System Reinforcement & Convalescence",
-      "Metabolic Energy Optimization"
+      "Erosive Reflux Esophagitis & Severe GERD",
+      "Zollinger-Ellison Syndrome & Acid Overproduction",
+      "Refractory Heartburn & Gastric Regurgitation",
+      "Post-meal Nausea and Bloating"
     ],
-    dosageAdministration: "1 softgel capsule daily after main meal.",
-    storage: "Store below 25°C. Protect from direct heat and light.",
-    warnings: "Nutraceutical supplement; not for medicinal disease treatment.",
-    certifications: ["FSSAI Licensed", "ISO 22000", "WHO-GMP"],
-    highlights: ["9 Super Herbal Extracts", "Pure Omega-3 EPA/DHA", "100% Bioavailable Minerals"]
+    dosageAdministration: "1 capsule daily before breakfast.",
+    storage: "Store below 25°C in a dry place protected from light.",
+    warnings: "Swallow whole with a glass of water.",
+    certifications: ["WHO-GMP", "ISO 9001:2015", "DCGI Approved"],
+    highlights: ["Advanced S-Isomer Purity", "Higher Acid Suppression Ratio", "Superior Bioavailability"]
   },
   {
     id: "nx-006",
-    slug: "azikoff-500-tablets",
-    brandName: "AZIKOFF-500",
-    genericName: "Azithromycin Tablets IP 500 mg",
-    category: "Antibiotics & Anti-Infectives",
-    categorySlug: "antibiotics",
-    dosageForm: "Tablets",
-    badge: "High Purity",
-    mrp: "₹ 119.00",
-    packPrice: "3 Tablets / Strip",
-    isFeatured: false,
-    isNew: false,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "10 x 3 Tablets in Blister Pack / 10 x 10 Alu-Alu",
-    packType: "Blister Pack",
-    shortDesc: "Macrolide antibiotic with long tissue half-life for convenient 3-day respiratory, genital, and skin infection courses.",
+    slug: "vita-all-multivitamin-capsules",
+    brandName: "Vita-All™",
+    genericName: "Multivitamin & Multimineral Capsules (23 Essential Vitamins & Minerals)",
+    category: "Multivitamins & Nutraceuticals",
+    categorySlug: "nutraceuticals",
+    dosageForm: "Capsules",
+    badge: "Complete Nutrition",
+    mrp: "₹ 175.00",
+    packPrice: "15 Capsules / Strip",
+    isFeatured: true,
+    isNew: true,
+    image: imgVitaAll,
+    images: [imgVitaAll],
+    packaging: "15 Capsules per Blister Strip in Premium Box",
+    packType: "Capsule Blister",
+    shortDesc: "Complete daily nutrition powerhouse featuring 23 essential vitamins & minerals (Vitamin A, C, B12, D3, Zinc) for immunity, energy, mental focus, heart health, and bone strength.",
     composition: [
-      { ingredient: "Azithromycin Dihydrate IP eq. to Azithromycin", amount: "500 mg" },
-      { ingredient: "Excipients", amount: "q.s." }
+      { ingredient: "23 Essential Vitamins & Minerals Complex", amount: "RDA Formulated" },
+      { ingredient: "Vitamin A, Vitamin C, Vitamin D3, Vitamin E", amount: "Balanced" },
+      { ingredient: "Vitamin B12, Folic Acid, Biotin", amount: "Therapeutic" },
+      { ingredient: "Zinc, Iron, Magnesium, Selenium, Chromium", amount: "Optimal" }
     ],
-    therapeuticClass: "Macrolide Antibiotic",
+    therapeuticClass: "Complete Daily Multivitamin & Mineral Complex",
     indications: [
-      "Upper & Lower Respiratory Tract Infections (Bronchitis, Tonsillitis)",
-      "Skin and Soft Tissue Infections",
-      "Genital Ulcer & Chlamydial Infections",
-      "Community-Acquired Pneumonia"
+      "Immunity Support & Defense",
+      "Daily Energy Boost & Fatigue Relief",
+      "Mental Focus & Cognitive Alertness",
+      "Heart Health & Vascular Support",
+      "Bone & Joint Strength"
     ],
-    dosageAdministration: "500 mg once daily for 3 consecutive days 1 hour before meal.",
-    storage: "Store at room temperature not exceeding 30°C.",
-    warnings: "Use with caution in patients with hepatic impairment.",
-    certifications: ["WHO-GMP", "ISO 9001:2015"],
-    highlights: ["Single-Dose Daily Regimen", "Superior Tissue Penetration", "Export Standard"]
+    dosageAdministration: "1 capsule daily after breakfast or meal.",
+    storage: "Store in a cool, dry place below 25°C away from direct sunlight.",
+    warnings: "Nutritional food supplement. Keep out of reach of children.",
+    certifications: ["FSSAI Licensed", "WHO-GMP", "ISO 9001:2015"],
+    highlights: ["23 Active Micronutrients", "High-Absorption Matrix", "Essential Nutrients for Everyday Wellness"]
   },
   {
     id: "nx-007",
-    slug: "respi-dx-cough-syrup",
-    brandName: "RESPI-DX",
-    genericName: "Dextromethorphan HBr, Phenylephrine HCl & Chlorpheniramine Maleate Syrup",
-    category: "Respiratory & Anti-Allergic",
-    categorySlug: "respiratory",
-    dosageForm: "Syrup / Liquid",
-    badge: "Non-Drowsy",
-    mrp: "₹ 98.00",
-    packPrice: "100 ml Bottle",
-    isFeatured: true,
-    isNew: false,
-    image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "100 ml Amber PET Bottle with Calibrated Measuring Cup",
-    packType: "PET Bottle",
-    shortDesc: "Triple-action soothing cough relief syrup targeting dry irritant cough, nasal congestion, runny nose, and throat tickle.",
-    composition: [
-      { ingredient: "Dextromethorphan Hydrobromide IP", amount: "10 mg / 5ml" },
-      { ingredient: "Phenylephrine Hydrochloride IP", amount: "5 mg / 5ml" },
-      { ingredient: "Chlorpheniramine Maleate IP", amount: "2 mg / 5ml" },
-      { ingredient: "Raspberry Syrupy Base", amount: "q.s." }
-    ],
-    therapeuticClass: "Antitussive + Decongestant + Antihistaminic",
-    indications: [
-      "Dry, hacking, non-productive cough",
-      "Nasal and sinus congestion",
-      "Allergic rhinitis, sneezing, and watery eyes",
-      "Throat irritation"
-    ],
-    dosageAdministration: "Adults: 5-10 ml 3-4 times daily with measuring cap.",
-    storage: "Store below 25°C. Do not freeze.",
-    warnings: "Avoid driving if mild drowsiness occurs.",
-    certifications: ["WHO-GMP", "GLP Quality"],
-    highlights: ["Delicious Raspberry Taste", "Rapid Bronchial Calming", "Child-Safe Cap"]
-  },
-  {
-    id: "nx-008",
-    slug: "telmax-40-am-tablets",
-    brandName: "TELMAX-40 AM",
-    genericName: "Telmisartan & Amlodipine Tablets IP",
-    category: "Cardiovascular & Diabetic Care",
-    categorySlug: "cardiovascular",
-    dosageForm: "Tablets",
-    badge: "Cardio Care",
-    mrp: "₹ 135.00",
-    packPrice: "10 Tablets / Strip",
-    isFeatured: false,
-    isNew: false,
-    image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "10 x 10 Alu-Alu Pack",
-    packType: "Alu-Alu Strip",
-    shortDesc: "Dual antihypertensive combination of Angiotensin Receptor Blocker and Calcium Channel Blocker for 24h blood pressure management.",
-    composition: [
-      { ingredient: "Telmisartan IP", amount: "40 mg" },
-      { ingredient: "Amlodipine Besylate IP eq. to Amlodipine", amount: "5 mg" },
-      { ingredient: "Excipients", amount: "q.s." }
-    ],
-    therapeuticClass: "ARB + Calcium Channel Blocker",
-    indications: [
-      "Essential Hypertension (High Blood Pressure)",
-      "Cardiovascular Risk Reduction",
-      "Target organ protection in hypertensive patients"
-    ],
-    dosageAdministration: "1 tablet once daily at the same time every day.",
-    storage: "Store protected from moisture below 30°C.",
-    warnings: "Do not use during pregnancy.",
-    certifications: ["WHO-GMP", "DCGI Approved"],
-    highlights: ["Smooth 24-Hour BP Control", "Target Organ Protection", "Alu-Alu Protected"]
-  },
-  {
-    id: "nx-009",
-    slug: "ceftrix-1g-injection",
-    brandName: "CEFTRIX-1G INJ",
-    genericName: "Ceftriaxone for Injection IP 1000 mg with Sterile Water",
-    category: "Injectables & Critical Care",
-    categorySlug: "injectables",
-    dosageForm: "Injectable",
-    badge: "Critical Care",
-    mrp: "₹ 72.00",
-    packPrice: "1 Vial + WFI",
-    isFeatured: true,
-    isNew: false,
-    image: "https://images.unsplash.com/photo-1579165466791-78818925567b?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1579165466791-78818925567b?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "1 Vial + 10 ml Sterile Water for Injections (WFI)",
-    packType: "Glass Vial with WFI",
-    shortDesc: "Ultra-pure sterile lyophilized 3rd generation cephalosporin for IV/IM administration in severe systemic bacterial infections.",
-    composition: [
-      { ingredient: "Sterile Ceftriaxone Sodium IP eq. to Anhydrous Ceftriaxone", amount: "1000 mg (1 g)" },
-      { ingredient: "Sterile Water for Injection IP (Co-pack)", amount: "10 ml" }
-    ],
-    therapeuticClass: "3rd Generation Cephalosporin Antibiotic",
-    indications: [
-      "Bacterial Meningitis & Septicemia",
-      "Surgical Prophylaxis",
-      "Severe Nosocomial Pneumonia",
-      "Complicated Intra-Abdominal Infections"
-    ],
-    dosageAdministration: "For IV or IM use only as directed by hospital physician.",
-    storage: "Store below 25°C protected from light.",
-    warnings: "Do not mix with Calcium-containing solutions.",
-    certifications: ["WHO-GMP Sterile Facility", "ISO 9001:2015"],
-    highlights: ["100% Sterile Lyophilized", "Ultra-Low Endotoxin Count", "Supplied with Premium WFI"]
-  },
-  {
-    id: "nx-010",
-    slug: "dermashield-plus-cream",
-    brandName: "DERMASHIELD-PLUS",
-    genericName: "Ofloxacin, Ornidazole, Itraconazole & Clobetasol Propionate Cream",
-    category: "Dermatology & Topicals",
-    categorySlug: "dermatology",
-    dosageForm: "Ointment / Gel",
-    badge: "4-in-1 Action",
-    mrp: "₹ 88.00",
-    packPrice: "15g Lami Tube",
-    isFeatured: false,
-    isNew: true,
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "15g Lami Tube in Attractive Gloss Monocarton",
-    packType: "Laminated Tube",
-    shortDesc: "Comprehensive quad-combination dermatological cream addressing mixed bacterial, fungal, protozoal, and inflammatory skin conditions.",
-    composition: [
-      { ingredient: "Ofloxacin IP", amount: "0.75% w/w" },
-      { ingredient: "Ornidazole IP", amount: "2.0% w/w" },
-      { ingredient: "Itraconazole IP", amount: "1.0% w/w" },
-      { ingredient: "Clobetasol Propionate IP", amount: "0.05% w/w" },
-      { ingredient: "Cream Base", amount: "q.s." }
-    ],
-    therapeuticClass: "Antibacterial + Antifungal + Corticosteroid",
-    indications: [
-      "Mixed skin infections (bacterial + fungal dermatomycoses)",
-      "Tinea Cruris, Tinea Corporis, Tinea Pedis",
-      "Eczematous dermatitis with secondary infection",
-      "Pruritus, skin rashes, and severe dermal inflammation"
-    ],
-    dosageAdministration: "Apply a thin layer gently over the affected area 1 to 2 times daily.",
-    storage: "Store below 25°C. Do not freeze.",
-    warnings: "For external topical use only.",
-    certifications: ["WHO-GMP", "GLP Quality"],
-    highlights: ["Non-Greasy Rapid Absorption", "Broad-Spectrum Microbicidal", "Fast Itch Relief"]
-  },
-  {
-    id: "nx-011",
-    slug: "neurocob-cd3-tablets",
-    brandName: "NEUROCOB-CD3",
-    genericName: "Methylcobalamin, Calcitriol, Calcium Carbonate, Folic Acid & Vitamin B6 Tablets",
+    slug: "ostoviva-calcium-d3-tablets",
+    brandName: "Ostoviva",
+    genericName: "Elemental Calcium 500 mg + Vitamin D3 (Cholecalciferol IP) 250 I.U. Tablets",
     category: "Multivitamins & Nutraceuticals",
     categorySlug: "nutraceuticals",
     dosageForm: "Tablets",
-    badge: "Bone & Nerve Health",
-    mrp: "₹ 195.00",
+    badge: "Bone & Joint",
+    mrp: "₹ 130.00",
+    packPrice: "15 Tablets / Strip (10 x 15 Tablets)",
+    isFeatured: true,
+    isNew: false,
+    image: imgOstoviva,
+    images: [imgOstoviva],
+    packaging: "10 x 15 Tablets Blister Pack (150 Tablets per Box)",
+    packType: "Blister Pack",
+    shortDesc: "High-absorption calcium formulation fortified with Cholecalciferol (Vitamin D3) to support strong bones, healthy teeth, calcium absorption, and muscle function.",
+    composition: [
+      { ingredient: "Elemental Calcium (from Calcium Carbonate IP)", amount: "500 mg" },
+      { ingredient: "Vitamin D3 (Cholecalciferol IP)", amount: "250 I.U." },
+      { ingredient: "Excipients", amount: "q.s." }
+    ],
+    therapeuticClass: "Calcium & Vitamin D3 Supplement",
+    indications: [
+      "Supports Strong Bones & Teeth",
+      "Supports Optimal Calcium Absorption",
+      "Helps in Smooth Muscle & Nerve Function",
+      "Prevention & Treatment of Osteoporosis",
+      "Post-Menopausal & Geriatric Bone Care"
+    ],
+    dosageAdministration: "1 to 2 tablets daily after meals or as directed by physician.",
+    storage: "Store protected from light and moisture at a temperature not exceeding 30°C.",
+    warnings: "Do not exceed the recommended daily dose.",
+    certifications: ["WHO-GMP", "DCGI Approved", "ISO 9001:2015"],
+    highlights: ["High-Efficacy Elemental Calcium", "Vitamin D3 Absorption Booster", "Patient Friendly Tablet Size"]
+  },
+  {
+    id: "nx-008",
+    slug: "m-col-1500-tablets",
+    brandName: "M-Col 1500",
+    genericName: "Methylcobalamin Tablets 1500 mcg",
+    category: "Multivitamins & Nutraceuticals",
+    categorySlug: "nutraceuticals",
+    dosageForm: "Tablets",
+    badge: "Nerve Health",
+    mrp: "₹ 155.00",
     packPrice: "10 Tablets / Strip",
     isFeatured: true,
     isNew: false,
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "10 x 10 Blister Pack in High Gloss Outer Box",
+    image: imgMCol,
+    images: [imgMCol],
+    packaging: "1 x 10 Red Blister Strip in Premium UV Carton",
     packType: "Blister Pack",
-    shortDesc: "Complete neurotrophic and bone-strengthening formulation designed for diabetic neuropathy, osteoporosis, and nerve rejuvenation.",
+    shortDesc: "High-potency bioactive Vitamin B12 formulation delivering 1500 mcg Methylcobalamin to support nerve health, RBC formation, and cellular energy metabolism.",
     composition: [
-      { ingredient: "Methylcobalamin (Bioactive Vitamin B12)", amount: "1500 mcg" },
-      { ingredient: "Calcitriol (Active Vitamin D3)", amount: "0.25 mcg" },
-      { ingredient: "Calcium Carbonate IP eq. to Elemental Calcium", amount: "500 mg" },
-      { ingredient: "Folic Acid IP", amount: "1.5 mg" },
-      { ingredient: "Pyridoxine HCl (Vitamin B6) IP", amount: "3 mg" },
+      { ingredient: "Methylcobalamin IP (Bioactive Vitamin B12)", amount: "1500 mcg" },
       { ingredient: "Excipients", amount: "q.s." }
     ],
-    therapeuticClass: "Neurotropic Vitamins + Bioactive Calcium",
+    therapeuticClass: "Bioactive Vitamin B12 / Neurotropic Agent",
     indications: [
-      "Diabetic & Peripheral Neuropathy",
-      "Osteoporosis & Post-Menopausal Bone Loss",
-      "Sciatica & Neuralgia",
-      "Hyperhomocysteinemia Support"
+      "Supports Peripheral Nerve Health & Regeneration",
+      "Supports Healthy Red Blood Cell (RBC) Formation",
+      "Supports Cellular Energy Metabolism & Vitality",
+      "Diabetic Neuropathy & Burning Feet Syndrome",
+      "Megaloblastic Anemia Recovery"
     ],
-    dosageAdministration: "1 tablet daily after food or as directed by doctor.",
-    storage: "Store in a cool, dry place below 25°C.",
-    warnings: "Monitor calcium levels in severe renal impairment.",
-    certifications: ["WHO-GMP", "ISO 9001:2015"],
-    highlights: ["1500 mcg Active Methylcobalamin", "Calcitriol for Maximum Calcium Absorption", "Blister Moisture Shield"]
+    dosageAdministration: "1 tablet daily after meal or as prescribed by doctor.",
+    storage: "Store in a cool, dry place protected from light and moisture.",
+    warnings: "Nutraceutical for adult use.",
+    certifications: ["WHO-GMP", "ISO 9001:2015", "FSSAI Licensed"],
+    highlights: ["1500 mcg Pure Bioactive B12", "Rapid Sublingual / Oral Absorption", "Red Blister Foil Protection"]
   },
   {
-    id: "nx-012",
-    slug: "montex-lc-tablets",
-    brandName: "MONTEX-LC",
-    genericName: "Montelukast Sodium & Levocetirizine Dihydrochloride Tablets IP",
-    category: "Respiratory & Anti-Allergic",
-    categorySlug: "respiratory",
+    id: "nx-009",
+    slug: "elcarva-vitamin-e-levocarnitine-tablets",
+    brandName: "ELcarva",
+    genericName: "Vitamin E Acetate and Levocarnitine Tablets",
+    category: "Cardiovascular & Diabetic Care",
+    categorySlug: "cardiovascular",
     dosageForm: "Tablets",
-    badge: "24Hr Allergy Shield",
-    mrp: "₹ 128.00",
+    badge: "Heart & Energy",
+    mrp: "₹ 190.00",
     packPrice: "10 Tablets / Strip",
-    isFeatured: false,
-    isNew: false,
-    image: "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&w=900&q=90",
-    images: [
-      "https://images.unsplash.com/photo-1550572017-edd951aa8f72?auto=format&fit=crop&w=900&q=90"
-    ],
-    packaging: "10 x 10 Alu-Alu Strip Pack",
-    packType: "Alu-Alu Strip",
-    shortDesc: "Dual leukotriene receptor antagonist and potent H1-antihistaminic combination for perennial allergic rhinitis and asthma control.",
+    isFeatured: true,
+    isNew: true,
+    image: imgElcarva,
+    images: [imgElcarva],
+    packaging: "10 Tablets Triangular Blister Strip with Moisture Barrier",
+    packType: "Blister Pack",
+    shortDesc: "Synergistic cardio-protective and metabolic formula combining Vitamin E Acetate with Levocarnitine for heart strength, cellular energy, antioxidant support, and everyday vitality.",
     composition: [
-      { ingredient: "Montelukast Sodium IP eq. to Montelukast", amount: "10 mg" },
-      { ingredient: "Levocetirizine Dihydrochloride IP", amount: "5 mg" },
+      { ingredient: "Vitamin E Acetate IP (eq. to Vitamin E)", amount: "200 mg (200 IU)" },
+      { ingredient: "Levocarnitine IP", amount: "500 mg" },
       { ingredient: "Excipients", amount: "q.s." }
     ],
-    therapeuticClass: "Leukotriene Antagonist + 2nd Gen Antihistamine",
+    therapeuticClass: "Cardiovascular Support / Cellular Energy Optimizer",
     indications: [
-      "Allergic Rhinitis (Seasonal & Perennial)",
-      "Allergic Bronchial Asthma Prophylaxis",
-      "Chronic Idiopathic Urticaria & Itching",
-      "Exercise-Induced Bronchoconstriction"
+      "Supports Heart Health & Myocardial Strength",
+      "Promotes Cellular Energy & Physical Stamina",
+      "Potent Antioxidant Cellular Protection",
+      "Muscle Fatigue & Cramps Relief in Active Individuals",
+      "Cardiometabolic & Vascular Well-being"
     ],
-    dosageAdministration: "1 tablet once daily in the evening with water.",
-    storage: "Store below 25°C in a dry place.",
-    warnings: "Do not use for acute asthmatic attack.",
-    certifications: ["WHO-GMP", "DCGI Approved"],
-    highlights: ["Non-Sedating 2nd Gen Formula", "24-Hour Continuous Protection", "Alu-Alu Foil Pack"]
+    dosageAdministration: "1 tablet once or twice daily after meals as directed by physician.",
+    storage: "Store below 25°C in a dry place. Protect from direct heat and light.",
+    warnings: "Use under medical supervision in chronic cardiac conditions.",
+    certifications: ["WHO-GMP", "ISO 9001:2015", "DCGI Approved"],
+    highlights: ["Unique Triangular Tablet Geometry", "500 mg High Potency Levocarnitine", "Pure Vitamin E 200 IU"]
+  },
+  {
+    id: "nx-010",
+    slug: "tavlo-paracetamol-650-tablets",
+    brandName: "Tavlo™",
+    genericName: "Paracetamol Tablets IP 650 mg",
+    category: "Pain Relief & Anti-Inflammatory",
+    categorySlug: "analgesics",
+    dosageForm: "Tablets",
+    badge: "Fever & Pain",
+    mrp: "₹ 35.00",
+    packPrice: "15 Tablets / Strip (5 x 3)",
+    isFeatured: true,
+    isNew: false,
+    image: imgTavlo,
+    images: [imgTavlo],
+    packaging: "15 Tablets (5 x 3) Blister Pack",
+    packType: "Blister Pack",
+    shortDesc: "Fast-acting antipyretic and analgesic Paracetamol 650 mg formulation engineered for effective relief from fever, headache, body ache, and joint pain.",
+    composition: [
+      { ingredient: "Paracetamol IP", amount: "650 mg" },
+      { ingredient: "Excipients", amount: "q.s." }
+    ],
+    therapeuticClass: "Antipyretic & Analgesic (Non-Opioid)",
+    indications: [
+      "Reduces High Body Fever & Temperature",
+      "Relieves Severe Headache & Migraine Aches",
+      "Eases Generalized Body Pain & Muscle Aches",
+      "Post-Vaccination & Viral Flu Discomfort Relief"
+    ],
+    dosageAdministration: "1 tablet every 4 to 6 hours as needed (maximum 4 tablets in 24 hours) or as advised by doctor.",
+    storage: "Store protected from moisture and direct sunlight below 30°C.",
+    warnings: "Overdose may cause serious liver damage. Do not consume alcohol during therapy.",
+    certifications: ["WHO-GMP", "DCGI Approved", "ISO 9001:2015"],
+    highlights: ["Rapid Dissolution in < 2 Minutes", "Gastric Friendly Formula", "Quality IP Standard"]
   }
 ];
 

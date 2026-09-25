@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { COMPANY_INFO } from '../../data/pharmaData';
 import toast from 'react-hot-toast';
+import slsLogo from '../../assest/images/product-9.jpeg';
 
 export default function Navbar({ onOpenEnquiry }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -58,7 +59,7 @@ export default function Navbar({ onOpenEnquiry }) {
   const navLinks = [
     { name: "Home Page", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Pharma Products", path: "/products" },
+    { name: "Products", path: "/products" },
     { name: "Contact Us", path: "/contact" },
   ];
 
@@ -101,31 +102,20 @@ export default function Navbar({ onOpenEnquiry }) {
       <header 
         className={`sticky top-0 z-40 bg-white transition-all duration-300 ${
           isScrolled 
-            ? "shadow-md py-4 border-b border-slate-200" 
-            : "py-4 sm:py-5 border-b border-slate-100"
+            ? "shadow-md py-2.5 sm:py-3 border-b border-slate-200" 
+            : "py-3 sm:py-4 border-b border-slate-100"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Brand Logo */}
-            <Link to="/" className="flex items-center gap-3.5 group shrink-0">
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-pharma-600 p-2.5 text-white flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105 shadow-sm">
-                <Pill className="w-6 h-6 sm:w-7 sm:h-7 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2">
-                  <span className="font-heading font-black text-2xl sm:text-3xl text-slate-900 tracking-tight leading-none">
-                    SLS <span className="text-pharma-600">Pharma</span>
-                  </span>
-                  <span className="hidden sm:inline-block text-[11px] font-extrabold px-2 py-0.5 bg-pharma-50 text-pharma-700 rounded-md border border-pharma-200 tracking-wider uppercase">
-                    LIFESCIENCES
-                  </span>
-                </div>
-                <p className="text-[11px] font-bold text-slate-500 tracking-wider uppercase mt-1 font-heading">
-                  WHO-GMP Formulations
-                </p>
-              </div>
+            {/* Brand Logo with SLS Official Logo Image - Clean tightly cropped */}
+            <Link to="/" className="flex items-center group shrink-0 py-0.5">
+              <img 
+                src={slsLogo} 
+                alt="SLS Innovation For Life" 
+                className="h-11 sm:h-12 md:h-14 w-auto object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-103"
+              />
             </Link>
 
             {/* Desktop Navigation Links */}
@@ -136,7 +126,7 @@ export default function Navbar({ onOpenEnquiry }) {
                   <Link
                     key={link.path}
                     to={link.path}
-                    className={`px-5 py-2.5 rounded-xl text-[15px] sm:text-[16px] font-bold transition-all duration-200 font-heading relative ${
+                    className={`px-5 py-2.5 rounded-xl text-[15px] sm:text-[16px] font-bold transition-all duration-200 font-heading ${
                       isActive 
                         ? "text-pharma-700 bg-pharma-50 border border-pharma-200 shadow-2xs font-extrabold" 
                         : "text-slate-700 hover:text-pharma-600 hover:bg-slate-50"

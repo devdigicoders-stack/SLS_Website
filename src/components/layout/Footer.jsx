@@ -16,6 +16,7 @@ import {
 import { FaLinkedinIn, FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { COMPANY_INFO, CATEGORIES, CERTIFICATIONS } from '../../data/pharmaData';
 import toast from 'react-hot-toast';
+import slsLogo from '../../assest/images/product-9.jpeg';
 
 export default function Footer({ onOpenEnquiry }) {
   const [emailInput, setEmailInput] = useState('');
@@ -55,18 +56,14 @@ export default function Footer({ onOpenEnquiry }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1: Brand & Story */}
-          <div className="lg:col-span-2 space-y-5">
-            <Link to="/" className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-2xl bg-pharma-600 p-2.5 shadow-sm text-white flex items-center justify-center">
-                <Pill className="w-6 h-6 transform -rotate-45" />
-              </div>
-              <div>
-                <span className="font-heading font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
-                  SLS <span className="text-pharma-400">Pharma</span>
-                </span>
-                <span className="text-xs ml-2.5 font-bold px-2 py-0.5 bg-slate-800 text-pharma-300 rounded border border-slate-700 uppercase tracking-wider">
-                  LIFESCIENCES
-                </span>
+          <div className="lg:col-span-2 space-y-6">
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="h-14 sm:h-16 w-auto flex items-center justify-center p-2 rounded-2xl bg-white shadow-sm transition-transform duration-300 group-hover:scale-105">
+                <img 
+                  src={slsLogo} 
+                  alt="SLS Innovation For Life" 
+                  className="h-full w-auto object-contain max-h-14 sm:max-h-16"
+                />
               </div>
             </Link>
 
@@ -121,7 +118,7 @@ export default function Footer({ onOpenEnquiry }) {
               <li>
                 <Link to="/products" className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
                   <ArrowRight className="w-3.5 h-3.5 text-pharma-500" />
-                  <span>Pharma Products</span>
+                  <span>Products</span>
                 </Link>
               </li>
               <li>
