@@ -13,7 +13,6 @@ export default function HomePage({ onQuickView, onEnquire }) {
       <HeroSection onOpenEnquiry={onEnquire} />
       <StatsSection />
       <CategoryGrid />
-      <FeaturedProducts onQuickView={onQuickView} onEnquire={onEnquire} />
       <QualityAssurance />
       <FacilityPreview />
       <TestimonialsFaq onOpenEnquiry={onEnquire} />

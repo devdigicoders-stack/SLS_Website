@@ -17,7 +17,7 @@ export const COMPANY_INFO = {
     instagram: "https://instagram.com"
   },
   stats: [
-    { label: "Formulations Available", value: "Available", suffix: "" },
+    { label: "Formulations Available", value: "250+", suffix: "" },
     { label: "Global Clients & Partners", value: "750+", suffix: "" },
     { label: "Manufacturing Capacity", value: "10M+", suffix: "Units/Mo" },
     { label: "WHO-GMP Quality Score", value: "99.9%", suffix: "" },
@@ -33,6 +33,18 @@ export const CERTIFICATIONS = [
   { name: "FSSAI Licensed", desc: "Food Safety and Standards Authority of India certified nutraceuticals", badge: "FSSAI Grade", icon: "heart" },
 ];
 
+// Import Product Images from assets
+import imgAmoxysheild from '../assest/images/product-10.jpeg';
+import imgPainexa from '../assest/images/product-2.jpeg';
+import imgGastroD from '../assest/images/product-5.jpeg';
+import imgEzoD from '../assest/images/product-3.jpeg';
+import imgVitaAll from '../assest/images/product-7.jpeg';
+import imgOstoviva from '../assest/images/product-8.jpeg';
+import imgMCol from '../assest/images/product-4.jpeg';
+import imgElcarva from '../assest/images/product-1.jpeg';
+import imgTavlo from '../assest/images/product-6.jpeg';
+import imgSyrup from '../assest/images/product-9.jpeg';
+
 export const CATEGORIES = [
   {
     id: "antibiotics",
@@ -41,6 +53,7 @@ export const CATEGORIES = [
     count: 24,
     description: "Broad-spectrum antibacterial, antifungal, and antiviral formulations designed for targeted infection eradication.",
     icon: "ShieldAlert",
+    image: imgAmoxysheild,
     color: "from-teal-500 to-emerald-600",
     bgLight: "bg-teal-50 text-teal-700 border-teal-200",
   },
@@ -51,6 +64,7 @@ export const CATEGORIES = [
     count: 18,
     description: "NSAIDs, antipyretics, spasmolytics, and advanced muscle relaxant combinations for fast pain relief.",
     icon: "Zap",
+    image: imgPainexa,
     color: "from-sky-500 to-blue-600",
     bgLight: "bg-sky-50 text-sky-700 border-sky-200",
   },
@@ -61,18 +75,9 @@ export const CATEGORIES = [
     count: 16,
     description: "Proton pump inhibitors, prokinetics, antacids, and digestive enzymes for optimal gut health.",
     icon: "Activity",
+    image: imgGastroD,
     color: "from-indigo-500 to-purple-600",
     bgLight: "bg-indigo-50 text-indigo-700 border-indigo-200",
-  },
-  {
-    id: "respiratory",
-    name: "Respiratory & Anti-Allergic",
-    slug: "respiratory",
-    count: 14,
-    description: "Expectorants, bronchodilators, anti-histamines, and mucolytics for cough, cold, and asthma care.",
-    icon: "Wind",
-    color: "from-cyan-500 to-teal-600",
-    bgLight: "bg-cyan-50 text-cyan-700 border-cyan-200",
   },
   {
     id: "nutraceuticals",
@@ -81,6 +86,7 @@ export const CATEGORIES = [
     count: 22,
     description: "Antioxidants, immunity boosters, organic minerals, omega fatty acids, and essential vitamin complexes.",
     icon: "Sparkles",
+    image: imgVitaAll,
     color: "from-amber-500 to-orange-600",
     bgLight: "bg-amber-50 text-amber-700 border-amber-200",
   },
@@ -91,6 +97,7 @@ export const CATEGORIES = [
     count: 15,
     description: "Anti-hypertensives, lipid-lowering statins, and oral hypoglycemic agents for metabolic equilibrium.",
     icon: "HeartPulse",
+    image: imgElcarva,
     color: "from-rose-500 to-red-600",
     bgLight: "bg-rose-50 text-rose-700 border-rose-200",
   },
@@ -101,6 +108,7 @@ export const CATEGORIES = [
     count: 12,
     description: "Sterile lyophilized and liquid injectable formulations for emergency medicine and hospital care.",
     icon: "Syringe",
+    image: imgMCol,
     color: "from-emerald-500 to-teal-700",
     bgLight: "bg-emerald-50 text-emerald-700 border-emerald-200",
   },
@@ -111,6 +119,7 @@ export const CATEGORIES = [
     count: 10,
     description: "Topical antifungal, antibacterial, and anti-inflammatory ointments, gels, and lotions.",
     icon: "Layers",
+    image: imgOstoviva,
     color: "from-pink-500 to-rose-600",
     bgLight: "bg-pink-50 text-pink-700 border-pink-200",
   },
@@ -127,17 +136,6 @@ export const DOSAGE_FORMS = [
   "Ointment / Gel",
   "Protein Powder"
 ];
-
-// Import Product Images from assets
-import imgAmoxysheild from '../assest/images/product-10.jpeg';
-import imgPainexa from '../assest/images/product-2.jpeg';
-import imgGastroD from '../assest/images/product-5.jpeg';
-import imgEzoD from '../assest/images/product-3.jpeg';
-import imgVitaAll from '../assest/images/product-7.jpeg';
-import imgOstoviva from '../assest/images/product-8.jpeg';
-import imgMCol from '../assest/images/product-4.jpeg';
-import imgElcarva from '../assest/images/product-1.jpeg';
-import imgTavlo from '../assest/images/product-6.jpeg';
 
 export const PHARMA_PRODUCTS = [
   {

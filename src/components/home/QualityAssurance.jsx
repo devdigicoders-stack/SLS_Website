@@ -4,23 +4,23 @@ import { QUALITY_PILLARS, CERTIFICATIONS } from '../../data/pharmaData';
 
 export default function QualityAssurance() {
   return (
-    <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-14 sm:py-18 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-0 right-10 w-96 h-96 bg-pharma-600/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-medblue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pharma-500/10 border border-pharma-500/30 text-pharma-300 text-xs font-bold mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pharma-500/10 border border-pharma-500/30 text-pharma-300 text-xs font-bold mb-2.5 font-heading">
             <ShieldCheck className="w-4 h-4 text-pharma-400" />
             <span>ZERO COMPROMISE QUALITY POLICY</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-black text-white tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-white tracking-tight leading-tight">
             WHO-GMP Standardized <br />
             <span className="text-pharma-400">Quality Assurance Framework</span>
           </h2>
-          <p className="text-slate-400 text-sm sm:text-base mt-4">
+          <p className="text-slate-400 text-xs sm:text-base mt-2.5 font-body leading-relaxed max-w-2xl mx-auto">
             Every batch undergoes multi-tiered analytical verification using high-performance liquid chromatography (HPLC), dissolution profiling, and microbiological screening.
           </p>
         </div>

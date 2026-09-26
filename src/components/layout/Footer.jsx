@@ -140,12 +140,10 @@ export default function Footer({ onOpenEnquiry }) {
                 <li key={cat.id}>
                   <Link 
                     to={`/products?category=${cat.slug}`} 
-                    className="text-slate-400 hover:text-pharma-300 transition flex items-center justify-between group"
+                    className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2 group"
                   >
-                    <span className="group-hover:translate-x-1 transition-transform">{cat.name}</span>
-                    <span className="text-xs text-slate-400 bg-slate-900 px-2 py-0.5 rounded-md font-mono border border-slate-800">
-                      {cat.count}
-                    </span>
+                    <ArrowRight className="w-3.5 h-3.5 text-pharma-500/70 group-hover:text-pharma-400 group-hover:translate-x-1 transition-transform shrink-0" />
+                    <span className="group-hover:translate-x-0.5 transition-transform">{cat.name}</span>
                   </Link>
                 </li>
               ))}

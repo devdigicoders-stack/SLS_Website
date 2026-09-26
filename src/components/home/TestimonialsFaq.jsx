@@ -61,22 +61,22 @@ export default function TestimonialsFaq({ onOpenEnquiry }) {
   };
 
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-14 sm:py-18 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Testimonials Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-amber-50 border border-amber-200 text-amber-800 text-xs sm:text-sm font-bold rounded-full mb-3 font-heading">
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-amber-50 border border-amber-200 text-amber-800 text-xs sm:text-sm font-bold rounded-full mb-2.5 font-heading">
             <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
             <span>PARTNER TESTIMONIALS</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-heading font-black text-slate-900 tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 tracking-tight leading-tight">
             Trusted By 750+ Doctors, <br className="hidden sm:inline" />
             <span className="text-pharma-600">Hospitals & PCD Franchisees</span>
           </h2>
         </div>
 
         {/* Testimonials Sliding Carousel */}
-        <div className="relative max-w-4xl mx-auto mb-20">
+        <div className="relative max-w-4xl mx-auto mb-16">
           <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 to-white p-8 sm:p-12 border border-slate-200/90 shadow-soft-lg relative">
             <div className="flex items-center justify-between mb-6">
               <div className="flex text-amber-400 gap-1.5">

@@ -5,29 +5,29 @@ import { MANUFACTURING_CAPABILITIES } from '../../data/pharmaData';
 
 export default function FacilityPreview() {
   return (
-    <section className="py-20 bg-slate-50 relative">
+    <section className="py-14 sm:py-18 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-pharma-100 border border-pharma-200 text-pharma-800 text-xs font-bold rounded-full mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-pharma-100 border border-pharma-200 text-pharma-800 text-xs font-bold rounded-full mb-2.5 font-heading">
               <Building2 className="w-3.5 h-3.5 text-pharma-600" />
               <span>INFRASTRUCTURE & CLEANROOMS</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-display font-black text-slate-900 tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-heading font-black text-slate-900 tracking-tight leading-tight">
               State-Of-The-Art <br className="hidden sm:inline" />
               <span className="text-pharma-600">Manufacturing Facility</span>
             </h2>
-            <p className="text-sm text-slate-600 mt-2 max-w-xl">
+            <p className="text-xs sm:text-sm text-slate-600 mt-2 max-w-xl font-body leading-relaxed">
               Equipped with fully automated high-speed SS-316 machinery, positive-pressure cleanroom suites, and advanced computerized monitoring.
             </p>
           </div>
 
           <Link 
             to="/facility"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-navy-900 hover:bg-navy-950 text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md self-start lg:self-auto"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-navy-900 hover:bg-navy-950 text-white font-bold text-xs sm:text-sm rounded-xl transition shadow-md self-start lg:self-auto font-heading"
           >
-            <span>Explore Complete Plant Capabilities</span>
+            <span>Explore Plant Capabilities</span>
             <ArrowRight className="w-4 h-4 text-pharma-400" />
           </Link>
         </div>
