@@ -31,20 +31,6 @@ export default function ProductDetailPage({ onEnquire, onQuickView }) {
     .filter(p => p.categorySlug === product.categorySlug && p.id !== product.id)
     .slice(0, 3);
 
-  const handleShare = () => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
-      toast.success("Product link copied to clipboard!", { icon: '🔗' });
-    }
-  };
-
-  const handleDownloadMonograph = () => {
-    toast.success(`Downloading Technical Monograph & COA for ${product.brandName}...`, {
-      icon: '📄',
-      duration: 4000
-    });
-  };
-
   return (
     <div className="min-h-screen bg-slate-50 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,23 +43,6 @@ export default function ProductDetailPage({ onEnquire, onQuickView }) {
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Products Catalogue</span>
           </Link>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handleShare}
-              className="p-2.5 bg-white hover:bg-slate-100 text-slate-600 rounded-xl border border-slate-200/80 shadow-soft-sm transition"
-              title="Share Formulation"
-            >
-              <Share2 className="w-4 h-4" />
-            </button>
-            <button
-              onClick={handleDownloadMonograph}
-              className="hidden sm:flex items-center gap-1.5 px-4 py-2.5 bg-white hover:bg-slate-100 text-slate-700 text-xs font-bold rounded-xl border border-slate-200/80 shadow-soft-sm transition"
-            >
-              <Download className="w-3.5 h-3.5 text-pharma-600" />
-              <span>Download Monograph (PDF)</span>
-            </button>
-          </div>
         </div>
 
         {/* Main Product Container */}
@@ -160,24 +129,24 @@ export default function ProductDetailPage({ onEnquire, onQuickView }) {
                   {product.genericName}
                 </p>
 
-                {/* Price & Packaging Banner on Detail Page */}
-                <div className="mt-4 p-4 bg-emerald-50/60 border border-emerald-200/80 rounded-2xl flex flex-wrap items-center justify-between gap-4">
+                {/* Packaging & Quality Standards Banner on Detail Page */}
+                <div className="mt-4 p-4 bg-teal-50/60 border border-teal-200/80 rounded-2xl flex flex-wrap items-center justify-between gap-4">
                   <div>
-                    <span className="text-xs font-bold text-emerald-800 uppercase tracking-wider block font-heading">
-                      Maximum Retail Price (MRP)
+                    <span className="text-xs font-bold text-teal-800 uppercase tracking-wider block font-heading">
+                      Standard Commercial Packaging
                     </span>
-                    <span className="text-2xl sm:text-3xl font-black text-slate-900 font-heading text-emerald-700">
-                      {product.mrp || "₹ 150.00"}
+                    <span className="text-base sm:text-lg font-bold text-slate-900 font-heading">
+                      {product.packPrice || product.packaging}
                     </span>
-                    <span className="text-xs text-slate-500 font-medium ml-2">(Inclusive of all taxes)</span>
+                    <span className="text-xs text-teal-700 font-semibold block mt-0.5">WHO-GMP & DCGI Approved Batch</span>
                   </div>
                   <div className="text-left sm:text-right">
                     <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block font-heading">
-                      Standard Pack Form
+                      Franchise & PCD
                     </span>
-                    <span className="text-sm font-bold text-slate-800 font-body flex items-center gap-1.5 sm:justify-end">
-                      <Package className="w-4 h-4 text-pharma-600" />
-                      {product.packPrice || product.packaging}
+                    <span className="text-sm font-bold text-emerald-700 font-body flex items-center gap-1.5 sm:justify-end">
+                      <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                      Monopoly Rights Available
                     </span>
                   </div>
                 </div>
@@ -260,24 +229,6 @@ export default function ProductDetailPage({ onEnquire, onQuickView }) {
                     <span><strong>Precaution:</strong> {product.warnings}</span>
                   </div>
                 )}
-              </div>
-
-              {/* Action Buttons */}
-              <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => onEnquire(product, "Product Specific Order")}
-                  className="flex-1 flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl font-bold text-sm sm:text-base text-white bg-pharma-600 hover:bg-pharma-700 shadow-md transition font-heading"
-                >
-                  <Package className="w-5 h-5" />
-                  <span>Request Commercial Quotation</span>
-                </button>
-
-                <button
-                  onClick={() => onEnquire(product, "PCD Monopoly Franchise")}
-                  className="flex-1 flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl font-bold text-sm sm:text-base text-slate-800 bg-slate-100 hover:bg-slate-200 transition font-heading"
-                >
-                  <span>Inquire PCD Monopoly Rights</span>
-                </button>
               </div>
             </div>
           </div>

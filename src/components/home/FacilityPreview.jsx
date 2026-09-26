@@ -5,10 +5,10 @@ import { MANUFACTURING_CAPABILITIES } from '../../data/pharmaData';
 
 export default function FacilityPreview() {
   return (
-    <section className="py-14 sm:py-18 bg-slate-50 relative">
+    <section className="py-10 sm:py-14 bg-slate-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-pharma-100 border border-pharma-200 text-pharma-800 text-xs font-bold rounded-full mb-2.5 font-heading">
               <Building2 className="w-3.5 h-3.5 text-pharma-600" />

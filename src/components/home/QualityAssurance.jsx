@@ -4,14 +4,14 @@ import { QUALITY_PILLARS, CERTIFICATIONS } from '../../data/pharmaData';
 
 export default function QualityAssurance() {
   return (
-    <section className="py-14 sm:py-18 bg-slate-900 text-white relative overflow-hidden">
+    <section className="py-10 sm:py-14 bg-slate-900 text-white relative overflow-hidden">
       {/* Background Glows */}
       <div className="absolute top-0 right-10 w-96 h-96 bg-pharma-600/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute bottom-0 left-10 w-96 h-96 bg-medblue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pharma-500/10 border border-pharma-500/30 text-pharma-300 text-xs font-bold mb-2.5 font-heading">
             <ShieldCheck className="w-4 h-4 text-pharma-400" />
             <span>ZERO COMPROMISE QUALITY POLICY</span>

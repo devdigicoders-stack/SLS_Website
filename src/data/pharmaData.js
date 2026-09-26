@@ -1,6 +1,6 @@
 export const COMPANY_INFO = {
-  name: "SLS Pharma",
-  tagline: "Pioneering Formulations, Enhancing Global Health",
+  name: "SLS - Innovation for life",
+  tagline: "Innovation for life",
   description: "A premier WHO-GMP and ISO 9001:2015 certified pharmaceutical manufacturing powerhouse delivering high-efficacy formulations, ethical pharmaceutical marketing, and PCD franchise opportunities across 25+ global territories.",
   established: "2014",
   experience: "10+ Years",
@@ -101,28 +101,6 @@ export const CATEGORIES = [
     color: "from-rose-500 to-red-600",
     bgLight: "bg-rose-50 text-rose-700 border-rose-200",
   },
-  {
-    id: "injectables",
-    name: "Injectables & Critical Care",
-    slug: "injectables",
-    count: 12,
-    description: "Sterile lyophilized and liquid injectable formulations for emergency medicine and hospital care.",
-    icon: "Syringe",
-    image: imgMCol,
-    color: "from-emerald-500 to-teal-700",
-    bgLight: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  },
-  {
-    id: "dermatology",
-    name: "Dermatology & Topicals",
-    slug: "dermatology",
-    count: 10,
-    description: "Topical antifungal, antibacterial, and anti-inflammatory ointments, gels, and lotions.",
-    icon: "Layers",
-    image: imgOstoviva,
-    color: "from-pink-500 to-rose-600",
-    bgLight: "bg-pink-50 text-pink-700 border-pink-200",
-  },
 ];
 
 export const DOSAGE_FORMS = [
@@ -130,11 +108,8 @@ export const DOSAGE_FORMS = [
   "Tablets",
   "Capsules",
   "Syrup / Liquid",
-  "Injectable",
   "Dry Syrup",
-  "Softgel Capsules",
-  "Ointment / Gel",
-  "Protein Powder"
+  "Softgel Capsules"
 ];
 
 export const PHARMA_PRODUCTS = [

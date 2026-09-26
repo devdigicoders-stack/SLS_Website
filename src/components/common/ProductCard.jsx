@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 export default function ProductCard({ product, onQuickView, onEnquire }) {
   return (
     <div className="group relative bg-white rounded-2xl border border-slate-200 hover:border-pharma-500 shadow-soft-sm hover:shadow-soft-lg transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1">
-      {/* Product Image Section (Exact match with Category Cards) */}
-      <div className="relative h-44 sm:h-48 w-full bg-slate-100 overflow-hidden flex items-center justify-center p-3 border-b border-slate-100">
+      {/* Product Image Section (Direct Link to Full Details) */}
+      <Link 
+        to={`/products/${product.slug}`}
+        className="relative h-44 sm:h-48 w-full bg-slate-100 overflow-hidden flex items-center justify-center p-3 border-b border-slate-100 block group/img"
+      >
         <img 
           src={product.image} 
           alt={product.brandName}
@@ -23,7 +26,7 @@ export default function ProductCard({ product, onQuickView, onEnquire }) {
           <span className="w-1.5 h-1.5 rounded-full bg-pharma-500"></span>
           <span>{product.dosageForm.split('/')[0].trim()}</span>
         </div>
-      </div>
+      </Link>
 
       {/* Card Body Content */}
       <div className="p-5 flex-1 flex flex-col justify-between">
@@ -40,19 +43,13 @@ export default function ProductCard({ product, onQuickView, onEnquire }) {
             {product.genericName}
           </p>
 
-          {/* Packaging Note */}
-          <div className="mt-3 flex items-center justify-between text-[11px] font-medium text-slate-500 bg-slate-50 px-2.5 py-1.5 rounded-lg border border-slate-100">
-            <span className="text-slate-400 font-heading uppercase text-[9px] font-bold">Pack</span>
-            <span className="font-semibold text-slate-700 truncate max-w-[170px]">{product.packPrice || product.packType}</span>
-          </div>
         </div>
 
-        {/* Footer with Price & View Details Link (Exact match with Category Card) */}
+        {/* Footer with View Details Link */}
         <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-          <div>
-            <span className="text-base font-extrabold text-emerald-700 font-heading tracking-tight">
-              {product.mrp || "₹ 150.00"}
-            </span>
+          <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-700 font-heading">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+            <span>WHO-GMP Grade</span>
           </div>
 
           <Link 

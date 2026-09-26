@@ -6,9 +6,9 @@ export default function StatsSection() {
   const statIcons = [FlaskConical, Users, Building2, Award, Globe];
 
   return (
-    <section className="relative py-12 lg:py-16 bg-slate-50 border-b border-slate-200">
+    <section className="relative py-8 sm:py-10 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl shadow-soft-md border border-slate-200 p-8 lg:p-10">
+        <div className="bg-white rounded-3xl shadow-soft-md border border-slate-200 p-6 sm:p-8 lg:p-10">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7 lg:gap-10 divide-y md:divide-y-0 md:divide-x divide-slate-100">
           {COMPANY_INFO.stats.map((stat, idx) => {
             const IconComponent = statIcons[idx % statIcons.length];

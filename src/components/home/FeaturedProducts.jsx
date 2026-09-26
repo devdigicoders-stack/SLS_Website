@@ -8,23 +8,19 @@ export default function FeaturedProducts({ onQuickView, onEnquire }) {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
   const filterTabs = [
-    { id: 'all', name: 'All Formulations' },
-    { id: 'antibiotics', name: 'Antibiotics' },
-    { id: 'gastrointestinal', name: 'Gastro / Antacids' },
-    { id: 'analgesics', name: 'Pain Relief (NSAIDs)' },
-    { id: 'nutraceuticals', name: 'Nutraceuticals' },
-    { id: 'injectables', name: 'Injectables' },
+    { id: 'all', name: 'All Products' },
+    ...CATEGORIES.map(c => ({ id: c.slug, name: c.name.split('&')[0].trim() }))
   ];
 
   const filteredProducts = selectedCategory === 'all'
-    ? PHARMA_PRODUCTS.slice(0, 8)
+    ? PHARMA_PRODUCTS
     : PHARMA_PRODUCTS.filter(p => p.categorySlug === selectedCategory);
 
   return (
-    <section className="py-16 sm:py-20 bg-white relative">
+    <section className="py-10 sm:py-14 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-5">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-5">
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-teal-50 border border-teal-200 text-teal-800 text-xs sm:text-sm font-bold rounded-full mb-3 font-heading">
               <Sparkles className="w-4 h-4 text-teal-600" />

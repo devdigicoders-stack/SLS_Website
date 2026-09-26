@@ -68,8 +68,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Hero Header with Background Video (contact.mp4) in Loop */}
-      <section className="relative min-h-[60vh] sm:min-h-[70vh] lg:min-h-[80vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800 mb-10 sm:mb-14">
+      {/* Hero Header with Background Video (contact.mp4) in Loop matching Home */}
+      <section className="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800 mb-6 sm:mb-8">
         {/* Full-Banner Background Video in Loop */}
         <video
           src={contactVideo}
@@ -82,22 +82,45 @@ export default function ContactPage() {
           className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-100 transition-transform duration-700"
         />
 
-        {/* Clear Tint Overlay so video is crystal clear */}
+        {/* Crystal Clear Balanced Tint Overlay */}
         <div className="absolute inset-0 bg-navy-950/45 sm:bg-navy-950/55 z-10"></div>
 
         {/* Centered Content */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center space-y-5 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-600/80 text-pharma-300 text-xs font-bold font-heading shadow-md">
-            <MessageSquare className="w-4 h-4 text-pharma-400" />
-            <span>CONNECT WITH OUR COMMERCIAL DIVISION</span>
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-28 text-center space-y-3.5 sm:space-y-6">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-pharma-500/40 text-pharma-300 text-[11px] sm:text-xs font-bold font-heading tracking-wide sm:tracking-wider shadow-lg max-w-full">
+            <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pharma-400 shrink-0" />
+            <span className="truncate">CONNECT WITH OUR COMMERCIAL DIVISION</span>
           </div>
-          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white leading-[1.15] drop-shadow-md">
+
+          <h1 className="font-heading font-black text-2xl xs:text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.2] sm:leading-[1.15] text-white max-w-4xl mx-auto drop-shadow-md">
             Get In Touch For Formulations <br className="hidden sm:inline" />
-            <span className="text-pharma-300 drop-shadow-sm">& PCD Franchise Rights</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pharma-300 via-teal-200 to-emerald-300 drop-shadow-sm">
+              & PCD Franchise Rights
+            </span>
           </h1>
-          <p className="text-slate-100 text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed font-body max-w-2xl mx-auto drop-shadow-xs font-medium">
+
+          <p className="text-slate-100 text-xs sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-body drop-shadow-sm font-medium px-2 sm:px-0">
             Partner with India's fastest growing WHO-GMP certified pharmaceutical company. Reach our corporate team or submit your business requirement below.
           </p>
+
+          <div className="pt-2 sm:pt-5 flex flex-col xs:flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-sm xs:max-w-none mx-auto">
+            <a 
+              href={`tel:${COMPANY_INFO.phone}`}
+              className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm text-white bg-pharma-600 hover:bg-pharma-700 transition font-heading shadow-lg hover:shadow-glow-teal shrink-0"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Call +91 91409 67607</span>
+            </a>
+
+            <button 
+              type="button"
+              onClick={handleWhatsApp}
+              className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm text-white bg-slate-900/85 hover:bg-slate-800 backdrop-blur-md border border-slate-600 transition font-heading shadow-lg shrink-0 cursor-pointer"
+            >
+              <FaWhatsapp className="w-4 h-4 text-emerald-400" />
+              <span>WhatsApp Direct Desk</span>
+            </button>
+          </div>
         </div>
       </section>
 

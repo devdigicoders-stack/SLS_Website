@@ -93,41 +93,45 @@ export default function ProductsPage({ onQuickView, onEnquire }) {
   }, [searchQuery, selectedCategory, selectedDosage, sortBy]);
 
   return (
-    <div className="min-h-screen bg-slate-50 py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Page Title Header with Background Video (product-page.mp4) in Loop */}
-        <div className="relative rounded-3xl p-8 sm:p-16 lg:p-20 text-white shadow-soft-lg mb-10 overflow-hidden border border-slate-800 bg-navy-950 min-h-[320px] sm:min-h-[380px] lg:min-h-[440px] flex items-center">
-          {/* Background Video */}
-          <video
-            src={productVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            webkit-playsinline="true"
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-100 transition-transform duration-700"
-          />
+    <div className="min-h-screen bg-slate-50">
+      {/* Hero Header with Background Video (product-page.mp4) in Loop matching Home */}
+      <section className="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800 mb-6 sm:mb-8">
+        {/* Full-Banner Background Video in Loop */}
+        <video
+          src={productVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          webkit-playsinline="true"
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-100 transition-transform duration-700"
+        />
 
-          {/* Clear Tint Overlay so video is crystal clear */}
-          <div className="absolute inset-0 bg-navy-950/45 sm:bg-navy-950/55 z-10"></div>
+        {/* Crystal Clear Balanced Tint Overlay */}
+        <div className="absolute inset-0 bg-navy-950/45 sm:bg-navy-950/55 z-10"></div>
 
-          {/* Content */}
-          <div className="relative z-20 max-w-3xl space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-slate-600/80 text-pharma-300 text-xs font-bold font-heading shadow-md">
-              <Pill className="w-3.5 h-3.5 text-pharma-400" />
-              <span>OFFICIAL PRODUCT FORMULARY</span>
-            </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black tracking-tight text-white leading-tight drop-shadow-md">
-              Pharmaceutical Formulations <br className="hidden sm:inline" />
-              <span className="text-pharma-300 drop-shadow-sm">& Product Showcase</span>
-            </h1>
-            <p className="text-sm sm:text-base text-slate-100 mt-2 sm:mt-3 leading-relaxed font-body max-w-2xl drop-shadow-xs font-medium">
-              Explore our comprehensive catalogue of DCGI approved, WHO-GMP manufactured drugs. Filter by chemical salt, therapeutic category, or dosage format.
-            </p>
+        {/* Centered Content */}
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-28 text-center space-y-3.5 sm:space-y-6">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-pharma-500/40 text-pharma-300 text-[11px] sm:text-xs font-bold font-heading tracking-wide sm:tracking-wider shadow-lg max-w-full">
+            <Pill className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pharma-400 shrink-0" />
+            <span className="truncate">OFFICIAL PRODUCT FORMULARY</span>
           </div>
-        </div>
 
+          <h1 className="font-heading font-black text-2xl xs:text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.2] sm:leading-[1.15] text-white max-w-4xl mx-auto drop-shadow-md">
+            Pharmaceutical Formulations <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pharma-300 via-teal-200 to-emerald-300 drop-shadow-sm">
+              & Product Showcase
+            </span>
+          </h1>
+
+          <p className="text-slate-100 text-xs sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-body drop-shadow-sm font-medium px-2 sm:px-0">
+            Explore our comprehensive catalogue of DCGI-approved, WHO-GMP manufactured finished drugs. Filter by active salt, therapeutic category, or dosage format.
+          </p>
+        </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Filter & Search Bar (Compact & Sleek) */}
         <div className="bg-white rounded-2xl shadow-soft-sm border border-slate-200/90 p-4 sm:p-5 mb-8 space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3">

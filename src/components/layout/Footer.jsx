@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Pill, 
-  Phone, 
-  Mail, 
-  MapPin, 
-  ShieldCheck, 
-  Send, 
-  ArrowRight, 
-  Award, 
-  CheckCircle2, 
+import {
+  Pill,
+  Phone,
+  Mail,
+  MapPin,
+  ShieldCheck,
+  Send,
+  ArrowRight,
+  Award,
+  CheckCircle2,
   ExternalLink,
   Clock
 } from 'lucide-react';
@@ -20,6 +20,13 @@ import slsLogo from '../../assest/images/product-9.jpeg';
 
 export default function Footer({ onOpenEnquiry }) {
   const [emailInput, setEmailInput] = useState('');
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -57,11 +64,11 @@ export default function Footer({ onOpenEnquiry }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Col 1: Brand & Story */}
           <div className="lg:col-span-2 space-y-6">
-            <Link to="/" className="flex items-center gap-3 group">
+            <Link to="/" onClick={handleScrollToTop} className="flex items-center gap-3 group">
               <div className="h-14 sm:h-16 w-auto flex items-center justify-center p-2 rounded-2xl bg-white shadow-sm transition-transform duration-300 group-hover:scale-105">
-                <img 
-                  src={slsLogo} 
-                  alt="SLS Innovation For Life" 
+                <img
+                  src={slsLogo}
+                  alt="SLS Innovation For Life"
                   className="h-full w-auto object-contain max-h-14 sm:max-h-16"
                 />
               </div>
@@ -104,27 +111,39 @@ export default function Footer({ onOpenEnquiry }) {
             </h4>
             <ul className="space-y-3 text-sm font-body">
               <li>
-                <Link to="/" className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
+                <Link to="/" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
                   <ArrowRight className="w-3.5 h-3.5 text-pharma-500" />
-                  <span>Home Page</span>
+                  <span>Home</span>
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
+                <Link to="/about" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
                   <ArrowRight className="w-3.5 h-3.5 text-pharma-500" />
                   <span>About Us</span>
                 </Link>
               </li>
               <li>
-                <Link to="/products" className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
+                <Link to="/products" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
                   <ArrowRight className="w-3.5 h-3.5 text-pharma-500" />
                   <span>Products</span>
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
+                <Link to="/contact" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
                   <ArrowRight className="w-3.5 h-3.5 text-pharma-500" />
                   <span>Contact Us</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
+                  <ArrowRight className="w-3.5 h-3.5 text-pharma-500" />
+                  <span>Privacy Policy</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms-conditions" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2">
+                  <ArrowRight className="w-3.5 h-3.5 text-pharma-500" />
+                  <span>Terms & Conditions</span>
                 </Link>
               </li>
             </ul>
@@ -136,10 +155,11 @@ export default function Footer({ onOpenEnquiry }) {
               Therapeutic Segments
             </h4>
             <ul className="space-y-3 text-sm font-body">
-              {CATEGORIES.slice(0, 6).map((cat) => (
+              {CATEGORIES.map((cat) => (
                 <li key={cat.id}>
-                  <Link 
-                    to={`/products?category=${cat.slug}`} 
+                  <Link
+                    to={`/products?category=${cat.slug}`}
+                    onClick={handleScrollToTop}
                     className="text-slate-400 hover:text-pharma-300 transition flex items-center gap-2 group"
                   >
                     <ArrowRight className="w-3.5 h-3.5 text-pharma-500/70 group-hover:text-pharma-400 group-hover:translate-x-1 transition-transform shrink-0" />
@@ -175,45 +195,36 @@ export default function Footer({ onOpenEnquiry }) {
             </div>
 
             {/* Newsletter Subscription */}
-            <form onSubmit={handleSubscribe} className="pt-2">
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2 font-heading">
-                B2B Price List Alerts
-              </p>
-              <div className="flex gap-1.5">
-                <input 
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                  value={emailInput}
-                  onChange={(e) => setEmailInput(e.target.value)}
-                  className="w-full bg-slate-900 border border-slate-800 text-white placeholder-slate-500 text-xs sm:text-sm px-3.5 py-2.5 rounded-xl focus:outline-none focus:border-pharma-500 font-body"
-                />
-                <button 
-                  type="submit"
-                  className="p-2.5 bg-pharma-600 hover:bg-pharma-700 text-white rounded-xl transition"
-                >
-                  <Send className="w-4 h-4" />
-                </button>
-              </div>
-            </form>
+        
           </div>
         </div>
       </div>
 
       {/* Bottom Legal & Credit bar with digicoders.in link */}
       <div className="border-t border-slate-800 bg-navy-950 py-5 text-xs text-slate-400 font-body">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.</p>
-          <div className="flex items-center gap-2 text-slate-400">
-            <span>Designed & Developed with <span className="text-rose-500">♥</span> by</span>
-            <a 
-              href="https://digicoders.in" 
-              target="_blank" 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+            <p>© {new Date().getFullYear()} {COMPANY_INFO.name}. All rights reserved.</p>
+            <div className="flex items-center gap-3 text-slate-500">
+              <Link to="/privacy-policy" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition hover:underline">
+                Privacy Policy
+              </Link>
+              <span>•</span>
+              <Link to="/terms-conditions" onClick={handleScrollToTop} className="text-slate-400 hover:text-pharma-300 transition hover:underline">
+                Terms & Conditions
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-1.5 text-slate-400">
+            <span>Crafted by</span>
+            <a
+              href="https://digicoders.in"
+              target="_blank"
               rel="noreferrer"
               className="text-pharma-400 font-bold hover:text-pharma-300 hover:underline inline-flex items-center gap-1 transition"
             >
-              <span>#TeamDigiCoders</span>
-              <span className="text-[11px] text-slate-400 font-mono font-normal">(digicoders.in)</span>
+              <span>Team DigiCoders</span>
               <ExternalLink className="w-3 h-3 ml-0.5" />
             </a>
           </div>

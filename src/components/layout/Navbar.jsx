@@ -57,7 +57,7 @@ export default function Navbar({ onOpenEnquiry }) {
   };
 
   const navLinks = [
-    { name: "Home Page", path: "/" },
+    { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Products", path: "/products" },
     { name: "Contact Us", path: "/contact" },

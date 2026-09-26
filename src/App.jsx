@@ -9,15 +9,21 @@ import ProductsPage from './pages/ProductsPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import FacilityPage from './pages/FacilityPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import QuickViewModal from './components/common/QuickViewModal';
 import EnquiryModal from './components/common/EnquiryModal';
 
-// Scroll to top automatically when location pathname changes
+// Scroll to top automatically when location pathname changes (not on filter tab changes)
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }, [pathname]);
   return null;
 }
@@ -98,6 +104,14 @@ export default function App() {
           <Route 
             path="/contact" 
             element={<ContactPage />} 
+          />
+          <Route 
+            path="/privacy-policy" 
+            element={<PrivacyPolicyPage />} 
+          />
+          <Route 
+            path="/terms-conditions" 
+            element={<TermsPage />} 
           />
           <Route 
             path="*" 

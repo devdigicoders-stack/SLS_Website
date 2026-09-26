@@ -28,9 +28,9 @@ export default function FacilityPage({ onEnquire }) {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Hero Header with Background Video (manufacturing-page.mp4) in Loop */}
-      <section className="relative min-h-[55vh] sm:min-h-[60vh] lg:min-h-[68vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800">
-        {/* Full-Banner Background Video in Loop without controls */}
+      {/* Hero Header with Background Video (manufacturing-page.mp4) in Loop matching Home */}
+      <section className="relative min-h-[65vh] sm:min-h-[75vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden bg-navy-950 text-white border-b border-slate-800">
+        {/* Full-Banner Background Video in Loop */}
         <video
           src={manufacturingVideo}
           autoPlay
@@ -39,33 +39,53 @@ export default function FacilityPage({ onEnquire }) {
           playsInline
           webkit-playsinline="true"
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-105 sm:scale-100 transition-transform duration-700"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0 scale-100 transition-transform duration-700"
         />
 
-        {/* Clean Tint Overlay - Balanced so animation is clearly visible on mobile */}
-        <div className="absolute inset-0 bg-navy-950/65 sm:bg-navy-950/80 z-10 backdrop-blur-[0.5px]"></div>
+        {/* Crystal Clear Balanced Tint Overlay */}
+        <div className="absolute inset-0 bg-navy-950/45 sm:bg-navy-950/55 z-10"></div>
 
-        {/* Centered Neat & Clean Content */}
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 text-center space-y-5 sm:space-y-6">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700 text-pharma-300 text-xs font-bold font-heading shadow-md">
-            <Building2 className="w-4 h-4 text-pharma-400" />
-            <span>WHO-GMP ACCREDITED MANUFACTURING PLANT</span>
+        {/* Centered Content */}
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-24 lg:py-28 text-center space-y-3.5 sm:space-y-6">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-pharma-500/40 text-pharma-300 text-[11px] sm:text-xs font-bold font-heading tracking-wide sm:tracking-wider shadow-lg max-w-full">
+            <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-pharma-400 shrink-0" />
+            <span className="truncate">WHO-GMP ACCREDITED MANUFACTURING PLANT</span>
           </div>
-          <h1 className="text-2xl sm:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-white leading-[1.18] drop-shadow-sm">
-            World-Class Pharmaceutical <br />
-            <span className="text-pharma-400">
+
+          <h1 className="font-heading font-black text-2xl xs:text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.2] sm:leading-[1.15] text-white max-w-4xl mx-auto drop-shadow-md">
+            World-Class Pharmaceutical <br className="hidden sm:inline" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-pharma-300 via-teal-200 to-emerald-300 drop-shadow-sm">
               Infrastructure & Cleanrooms
             </span>
           </h1>
-          <p className="text-slate-200 text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed font-body max-w-2xl mx-auto drop-shadow-xs">
+
+          <p className="text-slate-100 text-xs sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-body drop-shadow-sm font-medium px-2 sm:px-0">
             Spanning over 65,000 sq. ft. in Industrial Biotech Park, Lucknow, our facility integrates computerized automation, Schedule M compliant air handling systems, and high-speed packaging lines.
           </p>
+
+          <div className="pt-2 sm:pt-5 flex flex-col xs:flex-row items-center justify-center gap-2.5 sm:gap-4 w-full max-w-sm xs:max-w-none mx-auto">
+            <button 
+              onClick={() => onEnquire(null, "Third Party Manufacturing")}
+              className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm text-white bg-pharma-600 hover:bg-pharma-700 transition font-heading shadow-lg hover:shadow-glow-teal shrink-0 cursor-pointer"
+            >
+              <span>Contract Manufacturing Inquiry</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+
+            <a 
+              href={`tel:${COMPANY_INFO.phone}`}
+              className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-xs sm:text-sm text-white bg-slate-900/85 hover:bg-slate-800 backdrop-blur-md border border-slate-600 transition font-heading shadow-lg shrink-0"
+            >
+              <span>Call Facility Desk</span>
+              <ArrowRight className="w-4 h-4 text-pharma-300" />
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Cleanroom Standards Banner - Cleanly below banner without overlap */}
-      <section className="py-10 lg:py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        <div className="bg-white rounded-3xl p-8 shadow-soft-lg border border-slate-200">
+      <section className="py-8 lg:py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+        <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-soft-lg border border-slate-200">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
             <div className="flex items-center gap-4">
               <div className="p-3 bg-teal-50 text-teal-700 border border-teal-100 rounded-2xl">
@@ -111,9 +131,9 @@ export default function FacilityPage({ onEnquire }) {
       </section>
 
       {/* Production Suites Grid */}
-      <section className="py-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-3xl font-heading font-black text-slate-900 tracking-tight">
+      <section className="py-10 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+          <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900 tracking-tight">
             Manufacturing Suites & Output Capacity
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 mt-2 font-body">
@@ -165,14 +185,14 @@ export default function FacilityPage({ onEnquire }) {
       </section>
 
       {/* Quality Control (QC) & Analytical Laboratory */}
-      <section className="py-20 bg-slate-900 text-white">
+      <section className="py-12 sm:py-16 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-800 border border-slate-700 text-pharma-300 text-xs font-bold mb-3 font-heading">
               <FlaskConical className="w-3.5 h-3.5 text-pharma-400" />
               <span>ADVANCED ANALYTICAL TESTING</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-black text-white">
+            <h2 className="text-2xl sm:text-4xl font-heading font-black text-white">
               GLP Accredited QC & Analytical Labs
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-2 font-body">
@@ -206,7 +226,7 @@ export default function FacilityPage({ onEnquire }) {
       </section>
 
       {/* Facility Visit & Contract Inquiry */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-navy-950 rounded-3xl p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-soft-lg border border-slate-800">
             <div className="space-y-2 text-center md:text-left">
